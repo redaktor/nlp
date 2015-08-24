@@ -1,0 +1,21 @@
+{
+    "name": "nlp",
+    "description": "nlp in pure JS and a framework for your i18n JS project.",
+    "repository": {
+        "url": "https://github.com/redaktor/nlp",
+        "license": "MIT"
+    },
+
+    "keywords": [
+      "text",
+      "nlp",
+      "natural",
+      "language",
+      "processing",
+      "ner",
+      "pos",
+      "grammar",
+      "i18n",
+      "translation"
+    ]
+}
