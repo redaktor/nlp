@@ -1,6 +1,6 @@
 /**
  * HELPER fns
- * @module src/_
+ * @module src/fns
  */
 var defaultOptions = require('./_options');
 var schema = require('./data/schema');

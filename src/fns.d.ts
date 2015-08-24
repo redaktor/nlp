@@ -1,3 +1,7 @@
+/**
+ * HELPER fns
+ * @module src/fns
+ */
 declare module fns {
   export function noOp(): any;
 	export function escapeRegExp(s:string): string;
