@@ -1,7 +1,6 @@
 
-// note: structure of value / number / date is now different / more ...
-
-/* This will build the lexica from dictionary !
+/* This tool will build the lexica from dictionary !
+// It will automatically detect the languages and build the according folders.
 
 // This MUST be used with node.js
 // we recommend you to simply run it with

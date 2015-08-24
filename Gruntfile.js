@@ -19,13 +19,13 @@ module.exports = function(grunt) {
     },
     run: {
       buildDataTS: {
-        exec: 'node ./src/data/_build -l'
+        exec: 'node ./src/nlp/data/_build -l'
       },
       buildClient: {
-        exec: 'tsc ./src/index.ts --module amd --target es5 --outDir ' + buildClientPath
+        exec: ['tsc ./src/index.ts --module amd --target es5 --outDir ',buildClientPath].join('')
       },
       build: {
-        exec: 'tsc ./src/index.ts --module commonjs --target es5 --outDir ' + buildServerPath
+        exec: ['tsc ./src/index.ts --module commonjs --target es5 --outDir ',buildServerPath].join('')
       },
       run: {
         exec: 'node ./build/index.js',

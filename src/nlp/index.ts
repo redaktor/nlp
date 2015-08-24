@@ -1,7 +1,7 @@
 /** @namespace */
 declare var nlp;
 /**
- * redaktor/nlp by redaktor foundation and the contributors<br>
+ * redaktor/nlp by redaktor foundation and the contributors in 2015<br>
  * derives from<br>
  * // nlp_comprimise by @spencermountain in 2014<br>
  * // (https://github.com/spencermountain/nlp_compromise)<br>
@@ -14,13 +14,16 @@ declare var nlp;
  * @module index
  * @param {text} text
  * @param {object} options
- * @returns {object}
+ * @returns {Promise}
  * @summary a Natural-Language-Processing library in JS
  */
 
+// we return promises ...
+import Promise = require('../dojo/Promise');
+
 // import Verb = require("./verb/verb");
 // import Term = require("./term/term")
-import Sentence = require("./sentence/sentence");
+import Sentence = require("./logic/sentence/sentence");
 
 var s = new Sentence("hello version two");
 // let v = new Verb("walks");
