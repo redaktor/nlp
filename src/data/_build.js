@@ -1820,9 +1820,9 @@ function generateLanguage(lang) {
 			fs.writeFileSync(	path.join(PATH, lang, '/lexicon/index.ts'), lexiMain.concat(lexiStd).join(''));
 			fs.writeFileSync(	path.join(PATH, lang, '/lexicon/index.min.ts'), lexiZip.concat(lexiStd).join(''));
 			console.log( 'wrote', colors[0], 'lexicon file', colors[1], 'for language', '"'+lang+'"');
+			console.log( ' ' );
 		}
 	}
-
 
 	// Generate data part (lexica)
 	generators.forEach(build);
