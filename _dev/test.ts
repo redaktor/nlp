@@ -1,5 +1,5 @@
 
-import Promise = require('../src/dojo2/src/Promise');
+import Promise = require('../src/dojo/Promise');
 
 function test(v:any) {
   return Promise.resolve(v);
