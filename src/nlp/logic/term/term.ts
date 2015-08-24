@@ -6,8 +6,6 @@ let normalise = function (str) {
   }
   str = str.toLowerCase();
   str = str.replace(/[,\.!:;\?\(\)]/, "");
-  str = str.replace(/’/g, "'");
-  str = str.replace(/"/g, "");
   // single curly quotes
   str = str.replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]+/g, "'");
   // double curly quotes

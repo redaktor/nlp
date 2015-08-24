@@ -1,7 +1,7 @@
 //split a string into 'words' - as intended to be most helpful for this library.
 
 import sentence_parser = require("./sentences");
-import multiples = require("../data/en/lexicon/multiples");
+import multiples = require("../../data/en/lexicon/multiples");
 
 //these expressions ought to be one token, not two, because they are a distinct POS together
 let multi_words = Object.keys(multiples).map(function (m) {
