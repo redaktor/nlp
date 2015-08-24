@@ -1,30 +1,37 @@
 {
-  "author": "Spencer Kelly <spencermountain@gmail.com> (http://spencermounta.in)",
-  "name": "nlp_compromise",
+  "name": "nlp",
+  "version": "1.0.0",
   "description": "natural language processing in the browser",
-  "version": "2.0.0",
+  "author": "Sebastian Lasse/redaktor <api@redaktorcms.com> (https://github.com/redaktor)",
+  "contributors": [{
+    "name": "Spencer Kelly",
+    "email": "spencermountain@gmail.com"
+  }],
+  "main": "build/index.js",
+  "scripts": {
+    "test": "intern-runner config=test/intern"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/spencermountain/nlp_compromise.git"
+    "url": "git://github.com/redaktor/nlp.git"
   },
-  "scripts": {
-    "test": "mocha ./test/*"
-  },
-  "main": "index.js",
   "engines": [
-    "node >= 0.3.6"
+    "node >= 0.10.0"
   ],
   "bin": {
     "nlp": "./cmd.js"
   },
   "keywords": [
+    "text",
     "nlp",
     "natural",
     "language",
     "processing",
     "ner",
     "pos",
-    "grammar"
+    "grammar",
+    "i18n",
+    "translation"
   ],
   "devDependencies": {
     "grunt": "~0.4.*",
@@ -32,11 +39,10 @@
     "grunt-contrib-watch": "*",
     "grunt-run": "*",
     "grunt-tslint": "^2.4.0",
-    "mocha": "^2.2.5",
-    "nodeunit": "0.9.*",
-    "should": "^7.0.4",
-    "tslint": "^2.4.2",
-    "typescript": "1.5.*"
+    "intern": "3.*",
+    "typescript": "1.5.*",
+    "tslint": "^2.4.2"
   },
+  "analyze": true,
   "license": "MIT"
 }
