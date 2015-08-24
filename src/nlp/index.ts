@@ -1,7 +1,7 @@
 /** @namespace */
 declare var nlp;
 /**
- * redaktor/nlp by redaktor foundation and the contributors in 2015<br>
+ * redaktor/nlp by @redaktor foundation and the contributors in 2015<br>
  * derives from<br>
  * // nlp_comprimise by @spencermountain in 2014<br>
  * // (https://github.com/spencermountain/nlp_compromise)<br>
@@ -19,6 +19,7 @@ declare var nlp;
  */
 
 // we return promises ...
+// the original was blocking (ran synchronous)
 import Promise = require('../dojo/Promise');
 
 // import Verb = require("./verb/verb");
