@@ -1,0 +1,42 @@
+import _ = require("../../../nlp/fns");
+
+var zip:any = { CP: 
+   [ [ 'is', '<=n&' ],
+     [ 'am', '<ain&' ],
+     [ 'are', '=n&' ],
+     [ 'was', '=n&' ],
+     [ 'were', '=n&' ],
+     [ 'will be', 'won& be' ] ],
+  MD: 
+   [ [ 'did', '=n&' ],
+     [ 'would', '=n&' ],
+     [ 'could', '=n&' ],
+     [ 'should', '=n&' ],
+     [ 'can', '=&' ],
+     [ 'will', 'won&' ],
+     [ 'must', '=n&' ],
+     [ 'shall', '<nt' ],
+     [ 'shall', '<n&' ],
+     [ 'ought to', '<not to' ],
+     [ 'ought', 'ought not' ],
+     [ 'might', 'might not' ],
+     [ 'may', 'may not' ],
+     [ 'lets', 'lets not' ],
+     [ 'let\'s', 'let\'s not' ],
+     [ 'who\'d', 'who\'d not' ] ] }
+export = (function () {
+				var res = {negate:{}, CP:{}, MD:{}};
+				['CP', 'MD'].forEach(function(type) {
+					res[type] = {};
+					zip[type].forEach(function(a) {
+						//::BROWSER::
+						a = _.replBase(a, ["'t"]);
+						//::
+						res[type][a[0]] = type;
+						res[type][a[1]] = type;
+						res.negate[a[1]] = a[0];
+						res.negate[a[0]] = a[1];
+					});
+				});
+				return res;
+			})();

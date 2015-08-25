@@ -1,13 +1,14 @@
 {
   "name": "nlp",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "natural language processing in the browser",
-  "author": "Sebastian Lasse/redaktor <api@redaktorcms.com> (https://github.com/redaktor)",
+  "homepage": "https://github.com/redaktor/nlp",
+  "author": "Sebastian Lasse / redaktor foundation <api@redaktorcms.com> (https://github.com/redaktor)",
   "contributors": [{
     "name": "Spencer Kelly",
     "email": "spencermountain@gmail.com"
   }],
-  "main": "build/index.js",
+  "main": "build/text/nlp/index.js",
   "scripts": {
     "test": "intern-runner config=test/intern"
   },

@@ -1,2 +1,3 @@
-import nlp = require('./nlp/index');
+import nlp = require('./text/nlp/index');
+// TODO text class here ...
 export = nlp;
