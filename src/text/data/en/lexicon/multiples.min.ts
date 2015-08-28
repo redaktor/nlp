@@ -1,6 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = { will_be: 'CP',
+declare var zip:any;
+zip = { will_be: 'CP',
   'won\'t_be': 'CP',
   ought_to: 'MD',
   ought_not_to: 'MD',
@@ -95,4 +96,7 @@ var zip:any = { will_be: 'CP',
   a_la: 'IN',
   a_priori: 'IN',
   et_cetera: 'FW' }
-export =_.repl(zip, ['at', ' ', 'united', 'new', 'in ']);
+
+export = (function () {
+		return _.repl(zip, ['at', ' ', 'united', 'new', 'in ']);
+	})();

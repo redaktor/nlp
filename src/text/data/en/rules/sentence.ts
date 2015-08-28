@@ -9,8 +9,8 @@
  * @module data/en/rules/sentence
  */
 
-
-  var zip:any = { negate: 
+declare var zip:any;
+zip = { negate: 
    { infinitive: 
       { prefix: 'don\'t',
         tense: 'infinitive',

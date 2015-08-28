@@ -7,8 +7,8 @@
  * @module data/en/lexicon/honorifics
  */
 
-
-  var zip:any = [ 'jr',
+declare var zip:any;
+zip = [ 'jr',
   'mr',
   'mrs',
   'ms',

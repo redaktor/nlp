@@ -1,8 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var types = ['infinitive','gerund','past','present','doer','future'];
-
-  var zip:any = { irregulars: 
+declare var zip:any;
+zip = { irregulars: 
    [ [ 'be', 'being', 'was', 'is', 0 ],
      [ 'be', '<am', '<was', '<am', 0 ],
      [ 'ha#', '<v&', '<d', '<s', 0 ],
@@ -163,19 +162,23 @@ var types = ['infinitive','gerund','past','present','doer','future'];
      [ 'load', '=&', '=ed', '=s', '=_' ] ],
   noDoers: { appear: 1, happen: 1, seem: 1, try: 1, aid: 1, fail: 1, marry: 1 },
   irregularDoers: {} }
-zip.irregulars=zip.irregulars.map(function (a) {
-					var obj = {};
-					//::BROWSER::
-					a = _.replBase(a, ['ing', 'er', 've']);
-					//::
-					a.forEach(function(s, i) {
-						if (i > 3 && !s) {
-							zip.noDoers[a[0]] = 1;
-						} else if (i > 3) {
-							zip.irregularDoers[a[0]] = s;
-						} else {
-							obj[types[i]] = s;
-						}
-					});
-					return obj;
-				});export = zip;
+
+export = (function () {
+    var types = ['infinitive','gerund','past','present','doer','future'];
+    var irreg:any = zip.irregulars.map(function (a:any) {
+    	var obj = {};
+      a = _.replBase(a, ['ing', 'er', 've']);
+    	a.forEach(function(s, i) {
+    		if (i > 3 && !s) {
+    			zip.noDoers[a[0]] = 1;
+    		} else if (i > 3) {
+    			zip.irregularDoers[a[0]] = s;
+    		} else {
+    			obj[types[i]] = s;
+    		}
+    	});
+    	return obj;
+    });
+    zip.irregulars = irreg;
+    return zip;
+  })();

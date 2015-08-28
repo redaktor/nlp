@@ -1,4 +1,5 @@
-var zip:any = [ [ 'wholly', 'whole' ],
+declare var zip:any;
+zip = [ [ 'wholly', 'whole' ],
   [ 'idly', 'idle' ],
   [ '=y', 'full' ],
   [ '=ly', 'practical' ],
@@ -16,10 +17,11 @@ var zip:any = [ [ 'wholly', 'whole' ],
   [ '=ly', 'mystical' ],
   [ '=ally', 'pornographic' ],
   [ '=', 'jolly' ] ]
+
 export = (function () {
-				var o = {};
-				zip.forEach(function(a) {
-					o[a[0].replace('=', a[1])] = a[1];
-				});
-				return o;
-			})();
+    var o = {};
+    zip.forEach(function(a) {
+      o[a[0].replace('=', a[1])] = a[1];
+    });
+    return o;
+  })();

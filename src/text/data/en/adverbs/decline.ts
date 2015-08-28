@@ -8,30 +8,23 @@
  * @module data/en/adverbs/decline
  */
 
-
-  var zip:any = [ [ 'wholly', 'whole' ],
-  [ 'idly', 'idle' ],
-  [ 'fully', 'full' ],
-  [ 'practically', 'practical' ],
-  [ 'theoretically', 'theoretical' ],
-  [ 'sporadically', 'sporadic' ],
-  [ 'basically', 'basic' ],
-  [ 'grammatically', 'grammatical' ],
-  [ 'alphabetically', 'alphabetical' ],
-  [ 'economically', 'economical' ],
-  [ 'conically', 'conical' ],
-  [ 'politically', 'political' ],
-  [ 'vertically', 'vertical' ],
-  [ 'critically', 'critical' ],
-  [ 'fantastically', 'fantastic' ],
-  [ 'mystically', 'mystical' ],
-  [ 'pornographically', 'pornographic' ],
-  [ 'jolly', 'jolly' ] ]
-
-export = (function () {
-				var o = {};
-				zip.forEach(function(a) {
-					o[a[0]] = a[1];
-				});
-				return o;
-			})();
+declare var zip:any;
+zip = { wholly: 'whole',
+  idly: 'idle',
+  fully: 'full',
+  practically: 'practical',
+  theoretically: 'theoretical',
+  sporadically: 'sporadic',
+  basically: 'basic',
+  grammatically: 'grammatical',
+  alphabetically: 'alphabetical',
+  economically: 'economical',
+  conically: 'conical',
+  politically: 'political',
+  vertically: 'vertical',
+  critically: 'critical',
+  fantastically: 'fantastic',
+  mystically: 'mystical',
+  pornographically: 'pornographic',
+  jolly: 'jolly' }
+export = zip;

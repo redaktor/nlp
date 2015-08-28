@@ -1,4 +1,5 @@
-var zip:any = { '2': '²ƻ',
+declare var zip:any;
+zip = { '2': '²ƻ',
   '3': '³ƷƸƹƺǮǯЗҘҙӞӟӠӡȜȝ',
   '5': 'Ƽƽ',
   '8': 'Ȣȣ',
@@ -31,13 +32,14 @@ var zip:any = { '2': '²ƻ',
   x: '×ΧχϗϰХхҲҳӼӽӾӿ',
   y: '¥ÝýÿŶŷŸƳƴȲȳɎɏΎΥΨΫγψϒϓϔЎУучўѰѱҮүҰұӮӯӰӱӲӳ',
   z: 'ŹźŻżŽžƩƵƶȤȥɀΖζ' }
+
 export = (function () {
-				var res = { normaler: {}, greek: {}	};
-				for (var normCh in zip) {
-						zip[normCh].split('').forEach(function(grCh){
-							res.normaler[grCh] = normCh;
-							res.greek[normCh] = grCh;
-						});
-				}
-				return res;
-			})();
+    var res = { normaler: {}, greek: {}	};
+    for (var normCh in zip) {
+        zip[normCh].split('').forEach(function(grCh){
+          res.normaler[grCh] = normCh;
+          res.greek[normCh] = grCh;
+        });
+    }
+    return res;
+  })();

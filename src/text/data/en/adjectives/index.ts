@@ -8,8 +8,8 @@
  * @module data/en/adjectives/index
  */
 
-
-  var zip:any = [ 'wrong',
+declare var zip:any;
+zip = [ 'wrong',
   'public',
   'icy',
   'single',
@@ -720,5 +720,4 @@
   'serious',
   'typical',
   'virtual' ]
-
 export = zip;

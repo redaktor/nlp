@@ -1,6 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = { replacing: 
+declare var zip:any;
+zip = { replacing: 
    { prefix: 
       { matches: /^(over|under|out|-|un|re|en).{4}/i,
         replaces: /^(over|under|out|.*?-|un|re|en)/i,
@@ -153,16 +154,19 @@ var zip:any = { replacing:
      copulaAdverbAdjective: { tag: 'JJ', set: 1, _if: function (t,n,l) { return (l && n && l.pos.tag === 'CP' && t.pos.tag === 'RB' && n.pos.parent === 'verb'); } },
      beforeHimHerIt: { tag: 'VB', _if: function (t,n,l) { return (n && n.pos.tag == 'PRP' && t.pos.tag !== 'PP' && t.pos.parent == 'noun' && !t.punctuated); } },
      determinerAdjectiveNoun: { tag: 'JJ', _if: function (t,n,l) { return (l && n && l.pos.tag === 'DT' && n.pos.parent === 'noun' && t.pos.parent === 'verb'); } },
-     adjectiveAfterPronoun: { tag: 'VB', _if: function (t,n,l) { return (l && l.pos.tag==='PRP' && t.pos.tag==='JJ' ); } } } }
+     adjectiveAfterPronoun: { tag: 'VB', _if: function (t,n,l) { return (l && l.pos.tag==='PRP' && t.pos.tag==='JJ' ); } } },
+  wordsMatch: {},
+  lexiReplace: {} }
+
 export = (function () {
-				var a = [];
-				for (var k in zip.words) {
-					a = a.concat(zip.words[k].map(function(r){ return [r,k]; }));
-				}
-				zip.words = _.toObjDeep(a, ['matches', 'tag']);
-				zip.wordsMatch = _.tokenFn(zip, 'words', 1);
-				zip.lexiReplace = _.tokenFn(zip, 'replacing');
-				zip.set = _.tokenFn(zip, 'set');
-				zip.special = _.tokenFn(zip, 'special');
-				return zip;
-			})();
+    var a:any = [];
+    for (var k in zip.words) {
+      a = a.concat(zip.words[k].map(function(r){ return [r,k]; }));
+    }
+    a = _.toObjDeep(a, ['matches', 'tag']); zip.words = a;
+    a = _.tokenFn(zip, 'words', 1); zip.wordsMatch = a;
+    a = _.tokenFn(zip, 'replacing'); zip.lexiReplace = a;
+    a = _.tokenFn(zip, 'set'); zip.set = a;
+    a = _.tokenFn(zip, 'special', 1); zip.special = a;
+    return zip;
+  })();

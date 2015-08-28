@@ -2,8 +2,8 @@
   "name": "nlp_compromise",
   "version": "2.0.0",
   "description": "natural language processing in the browser",
-  "homepage": "https://github.com/redaktor/nlp",
   "author": "Sebastian Lasse/redaktor <api@redaktorcms.com> (https://github.com/redaktor)",
+  "homepage": "https://github.com/redaktor/nlp",
   "contributors": [{
     "name": "Spencer Kelly",
     "email": "spencermountain@gmail.com"

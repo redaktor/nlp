@@ -1,42 +1,39 @@
-import _ = require("../../../nlp/fns");
-
-var zip:any = { CP: 
-   [ [ 'is', '<=n&' ],
-     [ 'am', '<ain&' ],
-     [ 'are', '=n&' ],
-     [ 'was', '=n&' ],
-     [ 'were', '=n&' ],
-     [ 'will be', 'won& be' ] ],
+declare var zip:any;
+zip = { CP: 
+   [ [ 'is', 'isn\'t' ],
+     [ 'am', 'ain\'t' ],
+     [ 'are', 'aren\'t' ],
+     [ 'was', 'wasn\'t' ],
+     [ 'were', 'weren\'t' ],
+     [ 'will be', 'won\'t be' ] ],
   MD: 
-   [ [ 'did', '=n&' ],
-     [ 'would', '=n&' ],
-     [ 'could', '=n&' ],
-     [ 'should', '=n&' ],
-     [ 'can', '=&' ],
-     [ 'will', 'won&' ],
-     [ 'must', '=n&' ],
-     [ 'shall', '<nt' ],
-     [ 'shall', '<n&' ],
-     [ 'ought to', '<not to' ],
+   [ [ 'did', 'didn\'t' ],
+     [ 'would', 'wouldn\'t' ],
+     [ 'could', 'couldn\'t' ],
+     [ 'should', 'shouldn\'t' ],
+     [ 'can', 'can\'t' ],
+     [ 'will', 'won\'t' ],
+     [ 'must', 'mustn\'t' ],
+     [ 'shall', 'shant' ],
+     [ 'shall', 'shan\'t' ],
+     [ 'ought to', 'ought not to' ],
      [ 'ought', 'ought not' ],
      [ 'might', 'might not' ],
      [ 'may', 'may not' ],
      [ 'lets', 'lets not' ],
      [ 'let\'s', 'let\'s not' ],
      [ 'who\'d', 'who\'d not' ] ] }
+
 export = (function () {
-				var res = {negate:{}, CP:{}, MD:{}};
-				['CP', 'MD'].forEach(function(type) {
-					res[type] = {};
-					zip[type].forEach(function(a) {
-						//::BROWSER::
-						a = _.replBase(a, ["'t"]);
-						//::
-						res[type][a[0]] = type;
-						res[type][a[1]] = type;
-						res.negate[a[1]] = a[0];
-						res.negate[a[0]] = a[1];
-					});
-				});
-				return res;
-			})();
+    var res = {negate:{}, CP:{}, MD:{}};
+    ['CP', 'MD'].forEach(function(type) {
+      res[type] = {};
+      zip[type].forEach(function(a) {
+        res[type][a[0]] = type;
+        res[type][a[1]] = type;
+        res.negate[a[1]] = a[0];
+        res.negate[a[0]] = a[1];
+      });
+    });
+    return res;
+  })();

@@ -1,6 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = { particles: 
+declare var zip:any;
+zip = { particles: 
    [ 'together',
      'in',
      'out',
@@ -77,7 +78,9 @@ var zip:any = { particles:
      'where\'s': 'where',
      'why\'s': 'why',
      'how\'s': 'how' } }
+
 export = (function () {
-				zip.particles = zip.particles.reduce(_.toObj, {});
-				return zip;
-			})();
+    var p:any = zip.particles.reduce(_.toObj, {});
+    zip.particles = p;
+    return zip;
+  })();

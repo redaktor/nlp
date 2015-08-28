@@ -2,8 +2,8 @@
   "name": "nlp",
   "version": "0.0.1",
   "description": "natural language processing in the browser",
-  "homepage": "https://github.com/redaktor/nlp",
   "author": "Sebastian Lasse / redaktor foundation <api@redaktorcms.com> (https://github.com/redaktor)",
+  "homepage": "https://github.com/redaktor/nlp",
   "contributors": [{
     "name": "Spencer Kelly",
     "email": "spencermountain@gmail.com"

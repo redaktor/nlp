@@ -1,6 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = [ 'afgh%',
+declare var zip:any;
+zip = [ 'afgh%',
   'afri&',
   'alb%~',
   'alger~',
@@ -165,6 +166,10 @@ var zip:any = [ 'afgh%',
   'zamb~',
   'zimbabwe',
   'international' ]
-zip=zip.map(function (w) {
-					return _.repl(w, ['can', 'dan', 'ean', 'ian', 'ese', 'an', 'austr', 'ish']);
-				});export = zip;
+
+export = (function () {
+    zip = zip.map(function (w) {
+			return _.repl(w, ['can', 'dan', 'ean', 'ian', 'ese', 'an', 'austr', 'ish']);
+		});
+    return zip;
+  })();

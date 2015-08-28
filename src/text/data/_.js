@@ -11,6 +11,7 @@ var results = {main:[[]], zip:[[]]};
 
 function setLang(l) {
 	lang = l;
+	return lang;
 }
 function getRes(isZip) {
 	return (isZip) ? results.zip : results.main;
@@ -28,35 +29,6 @@ function allPossible() {
 	return _all;
 };
 // some helpers (only for _build)
-function repl(a, r, s){
-	// advanced data minifying, general logic
-	if (typeof a === 'undefined') { return null; }
-	var std = ['&','_','#','~','!','%',';','@','0','1','2','3','4','5','6','7','8','9','>','`'];
-	if (!s && r) { s = std.slice(0, r.length); }
-	if (!r) { r = std; }
-	function _r(w){
-		s.forEach(function(rS, i) { w = w.replace(new RegExp(rS, 'g'), r[i]) });
-		return w;
-	}
-	return (a instanceof Array) ? a.map(_r) : _r(a);
-}
-function replBase(a, r, s, baseI){
-	// advanced data minifying - also replace another array element (['fantastic', '=ally'])
-	if (!(a instanceof Array)) { return null; }
-	if (!baseI) baseI = 0;
-	return a.map(function(w, i) {
-		if (typeof w != 'string') {
-			return w;
-		} else if (i === baseI) {
-			return (r||s) ? this.repl(w, r, s) : w;
-		} else if (r) {
-			var _w = w.replace('=', a[baseI]).replace('<', a[baseI].slice(0,-2));
-		} else { // do zip
-			var _w = w.replace(a[baseI], '=').replace(a[baseI].slice(0,-2), '<');
-		}
-		return (r||s) ? this.repl(_w, r, s) : _w;
-	}.bind(this));
-}
 function newRes(isZip) {
 	var r = results[(isZip) ? 'zip' : 'main'];
 	if (r.length-1 > 0) results[(isZip) ? 'zip' : 'main'].push([]);
@@ -120,8 +92,6 @@ function meta(o, i) {
 	return false;
 }
 module.exports = {
-	repl: repl,
-	replBase: replBase,
 	allPossible: allPossible,
 	setLang: setLang,
 	getRes: getRes,

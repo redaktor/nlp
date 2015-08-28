@@ -9,8 +9,8 @@
  * @module data/en/lexicon/multiples
  */
 
-
-  var zip:any = { 'will be': 'CP',
+declare var zip:any;
+zip = { 'will be': 'CP',
   'won\'t be': 'CP',
   'ought to': 'MD',
   'ought not to': 'MD',
@@ -105,5 +105,4 @@
   'a la': 'IN',
   'a priori': 'IN',
   'et cetera': 'FW' }
-
 export = zip;

@@ -1,6 +1,8 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = { which: { possessiveNoun: { matches: /'s$/, tag: 'NNO' } },
+var types:any;
+declare var zip:any;
+zip = { which: { possessiveNoun: { matches: /'s$/, tag: 'NNO' } },
   gender: 
    { to: 
       [ [ /\b(mrs|miss|ms|misses|mme|mlle)\.?\b/i, 'she' ],
@@ -141,19 +143,22 @@ var zip:any = { which: { possessiveNoun: { matches: /'s$/, tag: 'NNO' } },
         /(m|l)ice$/i,
         /(antenn|formul|nebul|vertebr|vit)a$/i,
         /.sis$/i,
-        /^(?!talis|.*hu)(.*)man$/i ] } }
+        /^(?!talis|.*hu)(.*)man$/i ] },
+  preposition: {} }
+
 export = (function () {
-				var m = 'matches', r = 'replacer', rt = 'returns';
-				[['plural', 'to', [m, r]], ['plural', 'indicators', [m]],
-				 ['singular','to', [m, r]], ['singular','indicators', [m]],
-				 ['gender','to', [m, rt]], ['gender','names', [m, rt]], ['which', [m, rt]]].forEach(function(a:any){
-					var objKeys = a.pop();
-					if (a[1]) { zip[a[0]][a[1]] = _.toObjDeep(zip[a[0]][a[1]], objKeys); }
-					_.setObjKey(a, _.tokenFn(zip, a, 1), zip);
-				});
-				zip.preposition = {
-					phrase: new RegExp(zip.prepositionPhrase),
-					first: new RegExp('^'+zip.prepositionPhrase)
-				};
-				return zip;
-			})();
+    var m = 'matches', r = 'replacer', rt = 'returns';
+    [['plural', 'to', [m, r]], ['plural', 'indicators', [m]],
+     ['singular','to', [m, r]], ['singular','indicators', [m]],
+     ['gender','to', [m, rt]], ['gender','names', [m, rt]], ['which', [m, rt]]].forEach(function(a){
+       types = a;
+       var objKeys = types.pop();
+       if (types[1]) { zip[types[0]][types[1]] = _.toObjDeep(zip[types[0]][types[1]], objKeys); }
+       _.setObjKey(types, _.tokenFn(zip, types, 1), zip);
+    });
+    zip.preposition = {
+      phrase: new RegExp(zip.prepositionPhrase),
+      first: new RegExp('^'+zip.prepositionPhrase)
+    };
+    return zip;
+  })();

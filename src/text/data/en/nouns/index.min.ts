@@ -1,6 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = { refs: [ 1, 2, 3, 4, 6, 8, 9, 11 ],
+declare var zip:any;
+zip = { refs: [ 1, 2, 3, 4, 6, 8, 9, 11 ],
   PRP: 
    [ 'i',
      'you',
@@ -76,16 +77,17 @@ var zip:any = { refs: [ 1, 2, 3, 4, 6, 8, 9, 11 ],
      'for',
      'and',
      '&' ] }
+
 export = (function () {
-				var _ppRefs = {};
-				zip.PP.forEach(function(a) { _ppRefs[a[0]] = zip.PRP[a[1]]; });
-				zip.prpRefs.forEach(function(a) { _ppRefs[zip.PRP[a[0]]] = zip.PRP[a[1]]; });
-				return {
-					refs: zip.refs.map(function(i) { return zip.PRP[i]; }),
-					PRP: zip.PRP.reduce(_.toObj, {}),
-					PP: zip.PP.reduce(_.toObj, {}),
-					ppRefs: _ppRefs,
-					entityBlacklist: zip.entityBlacklist.reduce(_.toObj, {}),
-					personBlacklist: zip.personBlacklist,
-				}
-			})();
+		var _ppRefs = {};
+		zip.PP.forEach(function(a) { _ppRefs[a[0]] = zip.PRP[a[1]]; });
+		zip.prpRefs.forEach(function(a) { _ppRefs[zip.PRP[a[0]]] = zip.PRP[a[1]]; });
+		return {
+			refs: zip.refs.map(function(i) { return zip.PRP[i]; }),
+			PRP: zip.PRP.reduce(_.toObj, {}),
+			PP: zip.PP.reduce(_.toObj, {}),
+			ppRefs: _ppRefs,
+			entityBlacklist: zip.entityBlacklist.reduce(_.toObj, {}),
+			personBlacklist: zip.personBlacklist,
+		}
+	})();

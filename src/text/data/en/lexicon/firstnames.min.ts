@@ -1,6 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = { male: 
+declare var zip:any;
+zip = { male: 
    { will: '3m,&,ard,is,3ms',
      fred: ',e~ck,d&,~ck,dy',
      marc: 'us,,o,os,;',
@@ -274,31 +275,22 @@ var zip:any = { male:
      'dev0',
      'rosa~o',
      '1e' ] }
+
 export = (function () {
-				//::BROWSER::
-				var replN = function(w) {
-					return _.repl(w, ['ie', 'na', 'la', 'ri', 'ne', 'ra', 'el', 'in', 'an', 'le', 'en', 'ia'])
-				}
-				//::
-				var o = {};
-				['male', 'female'].forEach(function(type) {
-					for (var k in zip[type]) {
-						//::NODE::
-						var arr = zip[type][k].split(',');
-						//::
-						//::BROWSER::
-						var arr = replN(zip[type][k]).split(',');
-						//::
-						arr.forEach(function(w, i) {
-							o[k + w] = type.charAt(0);
-						})
-					}
-				});
-				//::NODE::
-				zip.ambiguous = zip.ambiguous.reduce(function(h,s){ h[s]='a'; return h; }, o);
-				//::
-				//::BROWSER::
-				zip.ambiguous = zip.ambiguous.map(replN).reduce(function(h,s){ h[s]='a'; return h; }, o);
-				//::
-				return o;
-			})();
+    var replN = function(w) {
+      return _.repl(w, ['ie', 'na', 'la', 'ri', 'ne', 'ra', 'el', 'in', 'an', 'le', 'en', 'ia'])
+    }
+    // convert it to an easier format
+    var o = {};
+    ['male', 'female'].forEach(function(type) {
+      for (var k in zip[type]) {
+        var arr = replN(zip[type][k]).split(',');
+        arr.forEach(function(w, i) {
+          o[k + w] = type.charAt(0);
+        })
+      }
+    });
+    var ambi:any = zip.ambiguous.map(replN).reduce(function(h,s){ h[s]='a'; return h; }, o);
+    zip.ambiguous = ambi;
+    return o;
+  })();

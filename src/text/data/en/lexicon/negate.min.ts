@@ -1,7 +1,7 @@
 import verbs_special = require('../verbs/special');
 
-
-  var zip:any = { everyone: 'no one',
+declare var zip:any;
+zip = { everyone: 'no one',
   everybody: 'nobody',
   someone: 'no one',
   somebody: 'nobody',
@@ -18,9 +18,10 @@ import verbs_special = require('../verbs/special');
   'out for': 'out against',
   'it in': 'it out',
   'on with': 'off with' }
+
 export = (function () {
-				var negate = verbs_special.negate || {};
-				for (var k in zip) { negate[k] = zip[k]; }
-				for (var k in negate) { negate[negate[k]] = k; }
-				return negate;
-			})();
+    var negate = verbs_special.negate || {};
+    for (var k in zip) { negate[k] = zip[k]; }
+    for (var k in negate) { negate[negate[k]] = k; }
+    return negate;
+  })();

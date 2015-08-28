@@ -1,14 +1,15 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
 import data = require('../lexicon/dates');
-
-  var zip:any = { range: /(?:\b|^)(?:between|from)(.*)(?:\sand(?= ) |or\s)(.*)|(?:\b|^)(?:between|from)?(.*)(?:(?:\sto\s)|(?: ?\- ?))(.+)/i,
+declare var zip:any;
+zip = { range: /(?:\b|^)(?:between|from)(.*)(?:\sand(?= ) |or\s)(.*)|(?:\b|^)(?:between|from)?(.*)(?:(?:\sto\s)|(?: ?\- ?))(.+)/i,
   multi: /(?: |^)(?:and(?= ) |or(?= ) )|(?: ?\& ?)|(?: ?, ?)(?=\d)/i,
   iso: /(?:(\d{4}|[+\-]\d{6})(?:\-)([1-9]|0[1-9]|1[0-2])(?:\-)(3[0-1]|[12][0-9]|0?[1-9])?)(?:T(\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{3}))?)?(?:(Z)|([+\-])(\d{2})(?::(\d{2}))?)?)?/,
   day: 
    { suffix: '(?:st|nd|rd|th)?(?:,\\s| of |$|\\s)',
-     nr: /(3[0-1]|[12][0-9]|0?[1-9])(?:st|nd|rd|th)?(?:,\s| of |$|\s)/i },
-  month: { nr: /([1-9]|0[1-9]|1[0-2])/ },
+     nr: /(3[0-1]|[12][0-9]|0?[1-9])(?:st|nd|rd|th)?(?:,\s| of |$|\s)/i,
+     weekday: '' },
+  month: { nr: /([1-9]|0[1-9]|1[0-2])/, w: '' },
   year: 
    { nr: '(?:([0-9]{1,4})+)',
      neg: /(?:\b| )[b]\s?(?:.?)\s?[c]\s?(?:.?)\s?[e]?\s?(?:.?)\s(?:([0-9]{1,4})+)|(?:([0-9]{1,4})+)(?:\b| )[b]\s?(?:.?)\s?[c]\s?(?:.?)\s?[e]?\s?(?:.?)| before| vor| v./i,
@@ -54,18 +55,20 @@ import data = require('../lexicon/dates');
        parameters: { fn: 'gregorian' } },
      { matches: /(?:(?: |^)(tomorrow|tmr)|(yester|y(?:.?)da)|((?:(?:to|2)(?:night|nite|nyt|noc))|tngt)|(morning)|(noon)|(afternoon|aftn)|(eve(?:ning?))|(night|nite|nyt|noc))?/i,
        parameters: { fn: 'dictionary' } } ] }
+
 export = (function () {
-				var _d = 'day', _m = 'month', _y = 'year';
-				var w = {day: Object.keys(data.days).join('|'), month: ['(?:(',Object.keys(data.months).join('|'),'),?)'].join('')};
-				var m_y = {matches:_.r([w.month,' ',zip.year.nr],0,'i'), parameters: {pattern:[_m,_y]}};
-				zip.year.nr = new RegExp(zip.year.nr);
-				zip.day.weekday = _.r(['(?:(',w.day,',?))'],0,'i'),
-				zip.month.w = _.r([w.month],0,'i');
-				for (var k in w) {
-					var a = zip[k+'First'][0].matches.map(function(s){ return s.replace('{m.w}',w.month) });
-					zip[k+'First'][0].matches = _.r(a,0,'i');
-					zip[k+'First'][1] = m_y;
-				}
-				zip.short.unshift({matches: zip.iso, parameters: {pattern:[_y,_m,_d]}});
-				return zip;
-			})();
+    var _d = 'day', _m = 'month', _y = 'year';
+    var w = {day: Object.keys(data.days).join('|'), month: ['(?:(',Object.keys(data.months).join('|'),'),?)'].join('')};
+    var m_y = {matches:_.r([w.month,' ',zip.year.nr],0,'i'), parameters: {pattern:[_m,_y]}};
+    var r:any;
+    r = new RegExp(zip.year.nr); zip.year.nr = r;
+    r = _.r(['(?:(',w.day,',?))'],0,'i'); zip.day.weekday = r;
+    r = _.r([w.month],0,'i'); zip.month.w = r;
+    for (var k in w) {
+      var a = zip[k+'First'][0].matches.map(function(s){ return s.replace('{m.w}',w.month) });
+      zip[k+'First'][0].matches = _.r(a,0,'i');
+      zip[k+'First'][1] = m_y;
+    }
+    zip.short.unshift({matches: zip.iso, parameters: {pattern:[_y,_m,_d]}});
+    return zip;
+  })();

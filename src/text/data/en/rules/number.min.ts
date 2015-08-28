@@ -1,6 +1,6 @@
 import d = require('../lexicon/numbers');
-
-  var zip:any = { negative: /^(-|minus|negative)[\s\-]/i,
+declare var zip:any;
+zip = { negative: /^(-|minus|negative)[\s\-]/i,
   factors: 
    [ { reg: /\b(a)?(one-)?(\s)?half([\s\-])?(of\s)?/i, mult: 0.5 },
      { reg: /\b(a)?(one-)?(\s)?quarter([\s\-])?(of\s)?/i,

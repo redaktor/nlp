@@ -8,8 +8,8 @@
  */
 import honorifics = require('./honorifics');
 
-
-  var zip:any = { nouns: 
+declare var zip:any;
+zip = { nouns: 
    [ 'ave',
      'blvd',
      'uss',
@@ -107,9 +107,4 @@ import honorifics = require('./honorifics');
      'vs',
      'bc',
      'ad' ] }
-export = (function () {
-				return {
-					nouns: zip.nouns.concat(honorifics),
-					nonNouns: zip.nonNouns
-				};
-			})();
+export = zip;

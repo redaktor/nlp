@@ -1,6 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = { which: 
+declare var zip:any;
+zip = { which: 
    { superlative: { matches: /..est$/, tag: 'RBS' },
      comparative: { matches: /..er$/, tag: 'RBR' } },
   adjective: 
@@ -12,12 +13,13 @@ var zip:any = { which:
         [ /uly$/i, 'ue' ],
         [ /ily$/i, 'y' ],
         [ /(.{3})ly$/i, '$1' ] ] } }
+
 export = (function () {
-				var m = 'matches';
-				[['adjective', 'to', [m, 'replacer']], ['which', [m, 'returns']]].forEach(function(a:any){
-					var objKeys = a.pop();
-					if (a[1]) { zip[a[0]][a[1]] = _.toObjDeep(zip[a[0]][a[1]], objKeys); }
-					_.setObjKey(a, _.tokenFn(zip, a, 1), zip);
-				});
-				return zip;
-			})();
+    var m = 'matches';
+    [['adjective', 'to', [m, 'replacer']], ['which', [m, 'returns']]].forEach(function(a:any){
+      var objKeys = a.pop();
+      if (a[1]) { zip[a[0]][a[1]] = _.toObjDeep(zip[a[0]][a[1]], objKeys); }
+      _.setObjKey(a, _.tokenFn(zip, a, 1), zip);
+    });
+    return zip;
+  })();

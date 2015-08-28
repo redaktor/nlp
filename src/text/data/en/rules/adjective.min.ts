@@ -1,6 +1,8 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = { which: 
+var types:any;
+declare var zip:any;
+zip = { which: 
    { comparative: { matches: /..er$/, tag: 'JJR' },
      superlative: { matches: /..est$/, tag: 'JJS' } },
   adverb: 
@@ -85,16 +87,18 @@ var zip:any = { which:
      fallback: function (word) {
 				return [word,'ness'].join('');	
 			} } }
+
 export = (function () {
-				var m = 'matches', r = 'replacer', rt = 'returns';
-				[['adverb', 'to', [m, r]], ['adverb', 'no', [m]],
-				 ['comparative','to',[m, r]], ['comparative','no',[m]], ['comparative','regular',[m]],
-				 ['superlative','to',[m, r]], ['superlative','no',[m]],  ['superlative','regular',[m]],
-				 ['noun','to',[m, r]], ['noun','no',[m]],
-				 ['which', [m, rt]]].forEach(function(a:any){
-					var objKeys = a.pop();
-					if (a[1]) { zip[a[0]][a[1]] = _.toObjDeep(zip[a[0]][a[1]], objKeys); }
-					_.setObjKey(a, _.tokenFn(zip, a, 1), zip);
-				});
-				return zip;
-			})();
+    var m = 'matches', r = 'replacer', rt = 'returns';
+    [['adverb', 'to', [m, r]], ['adverb', 'no', [m]],
+     ['comparative','to',[m, r]], ['comparative','no',[m]], ['comparative','regular',[m]],
+     ['superlative','to',[m, r]], ['superlative','no',[m]],  ['superlative','regular',[m]],
+     ['noun','to',[m, r]], ['noun','no',[m]],
+     ['which', [m, rt]]].forEach(function(a:any){
+      types = a;
+      var objKeys = a.pop();
+      if (a[1]) { zip[a[0]][a[1]] = _.toObjDeep(zip[a[0]][a[1]], objKeys); }
+      _.setObjKey(a, _.tokenFn(zip, a, 1), zip);
+    });
+    return zip;
+  })();

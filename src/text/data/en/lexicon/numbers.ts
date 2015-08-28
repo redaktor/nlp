@@ -8,8 +8,8 @@
  * @module data/en/lexicon/numbers
  */
 
-
-  var zip:any = { plus: [ 'plus', 'and' ],
+declare var zip:any;
+zip = { plus: [ 'plus', 'and' ],
   minus: [ 'minus', 'negative' ],
   factors: [ 'half', 'quarter' ],
   decimal: [ 'point', 'decimal' ],

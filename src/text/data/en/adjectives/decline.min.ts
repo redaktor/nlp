@@ -1,6 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = [ [ 'wrong', '=' ],
+declare var zip:any;
+zip = [ [ 'wrong', '=' ],
   [ 'public', '=@' ],
   [ 'vague', '=@', 1 ],
   [ 'icy', 'ici@' ],
@@ -270,33 +271,34 @@ var zip:any = [ [ 'wrong', '=' ],
   'ti!d',
   'solid',
   'angry' ]
+
 export = (function () {
-				var repJJ = function(s) { return (typeof s !== 'string') ? s : _.repl(s, ['ight', 'ing', 'ent', 'er', 're', 'al', 'ed', 'ly', 'some']); }
-				var res = { convertables: [], adverb: {to: {}, no:[]}, comparative: {to: {}}, superlative: {to: {}}, noun: {to: {}} };
-				var expand = function (s, b) { return (s === 0) ? 0 : s.replace('=', b); }
-				zip.forEach(function(_a) {
-					if (typeof _a === 'string') {
-						res.convertables.push(repJJ(_a));
-					} else {
-						var a = _a.map(function(w){ return repJJ(w); });
-						if (a.length > 1) {
-							if (a[1] === 0) { res.adverb.no.push(a[0]); }
-							if (typeof a[1] === 'string') { res.adverb.to[a[0]] = expand(a[1], a[0]); }
-						}
-						if (a[2] && a[2] === 1) {
-							res.convertables.push(a[0])
-						} else if (a.length>2) {
-							res.comparative.to[a[0]] = expand(a[2], a[0])
-						}
-						if (a.length>3 && a[3]!=1) {
-							res.superlative.to[a[0]] = expand(a[3], a[0])
-						}
-						if (a.length>4 && a[4]!=1) {
-							res.noun.to[a[0]] = expand(a[4], a[0])
-						}
-					}
-				});
-				res.convertables = res.convertables.reduce(_.toObj, {});
-				res.adverb.no = res.adverb.no.reduce(_.toObj, {});
-				return res;
-			})();
+    var repJJ = function(s) { return (typeof s !== 'string') ? s : _.repl(s, ['ight', 'ing', 'ent', 'er', 're', 'al', 'ed', 'ly', 'some']); }
+    var res = { convertables: [], adverb: {to: {}, no:[]}, comparative: {to: {}}, superlative: {to: {}}, noun: {to: {}} };
+    var expand = function (s, b) { return (s === 0) ? 0 : s.replace('=', b); }
+    zip.forEach(function(_a:any) {
+      if (typeof _a === 'string') {
+        res.convertables.push(repJJ(_a));
+      } else {
+        var a = _a.map(repJJ);
+        if (a.length > 1) {
+          if (a[1] === 0) { res.adverb.no.push(a[0]); }
+          if (typeof a[1] === 'string') { res.adverb.to[a[0]] = expand(a[1], a[0]); }
+        }
+        if (a[2] && a[2] === 1) {
+          res.convertables.push(a[0])
+        } else if (a.length>2) {
+          res.comparative.to[a[0]] = expand(a[2], a[0])
+        }
+        if (a.length>3 && a[3]!=1) {
+          res.superlative.to[a[0]] = expand(a[3], a[0])
+        }
+        if (a.length>4 && a[4]!=1) {
+          res.noun.to[a[0]] = expand(a[4], a[0])
+        }
+      }
+    });
+    res.convertables = res.convertables.reduce(_.toObj, {});
+    res.adverb.no = res.adverb.no.reduce(_.toObj, {});
+    return res;
+  })();

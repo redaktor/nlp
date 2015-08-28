@@ -4,12 +4,12 @@
  */
 
 // TODO - be more specific for Union types !!!
- 
+
 declare module fns {
   export function noOp(): any;
 	export function escapeRegExp(s:string): string;
-	export function repl(a:any, r:any, s:any): string; // array or string, array or 0, array or 0
-	export function replBase(a:any[], r:any, s:any, baseI:number): string;
+	export function repl(a:any, r:any, s?:any): string; // array or string, array or 0, array or 0
+	export function replBase(a:any[], r:any, s?:any, baseI?:number): string;
 	export function normalise(s:string, exclDot:boolean, leaveCase:boolean): string;
 	export function addNextLast(o:Object, i:number, a:any[]): Object; // TODO return interface
 	export function toTitlecase(str:string): string;

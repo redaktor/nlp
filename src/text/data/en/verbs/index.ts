@@ -8,8 +8,8 @@
  * @module data/en/verbs/index
  */
 
-
-  var zip:any = [ 'appear',
+declare var zip:any;
+zip = [ 'appear',
   'happen',
   'seem',
   'try',
@@ -560,5 +560,4 @@
   'don\'t',
   'won\'t',
   'what\'s' ]
-
 export = zip;

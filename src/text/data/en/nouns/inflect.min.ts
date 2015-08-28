@@ -1,6 +1,7 @@
-import _ = require("../../../nlp/fns");
+import _ = require("../../../nlp/_");
 
-var zip:any = { NN: 
+declare var zip:any;
+zip = { NN: 
    [ [ 'child', '=ren' ],
      [ 'person', 'people' ],
      [ 'leaf', '<av&' ],
@@ -216,15 +217,17 @@ var zip:any = { NN:
      'fahrenheit',
      'celcius',
      'kelvin',
-     'hertz' ] }
+     'hertz' ],
+  irregulars: [],
+  uncountables: [] }
+
 export = (function () {
-				//::BROWSER::
-				var repl = function(a) { return _.replBase(a, ['es']); }
-				zip.NN = zip.NN.map(repl);
-				zip.PRP = zip.PRP.map(repl);
-				zip.PP = zip.PP.map(repl);
-				//::
-				zip.irregulars = zip.NN.concat(zip.PRP, zip.PP);
-				zip.uncountables = zip.uc.reduce(_.toObj, {});
-				return zip;
-			})();
+		var repl = function(a) { return _.replBase(a, ['es']); }
+    var a:any;
+    a = zip.NN.map(repl); zip.NN = a;
+		a = zip.PRP.map(repl); zip.PRP = a;
+		a = zip.PP.map(repl); zip.PP = a;
+		a = zip.NN.concat(zip.PRP, zip.PP); zip.irregulars = a;
+		a = zip.uc.reduce(_.toObj, {}); zip.uncountables = a;
+		return zip;
+	})();

@@ -8,8 +8,8 @@
  * @module data/en/adjectives/demonym
  */
 
-
-  var zip:any = [ 'afghan',
+declare var zip:any;
+zip = [ 'afghan',
   'african',
   'albanian',
   'algerian',
@@ -174,5 +174,4 @@
   'zambian',
   'zimbabwe',
   'international' ]
-
 export = zip;
