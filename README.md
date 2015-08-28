@@ -5,7 +5,7 @@ Natural-Language-Processing<br><br>
 [![slack](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/shields/slackInvite.png)](https://redaktor-slackin.herokuapp.com)
 ## nlp [WIP]
 
-# Currently writing a README. Please stand by.
+## currently writing a README. Please stand by.
 
 # To run:
 ```
