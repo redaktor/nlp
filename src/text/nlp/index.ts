@@ -20,23 +20,17 @@ declare var nlp;
  */
 
 // let's not block anything - we return promises ...
+import Nlp = require('./module');
 import Promise = require('../../dojo/Promise');
-import Sentence = require('./sentence/sentence');
+import Sentence = require('./sentence/index');
 
 export class NLP {
-  constructor(kwArgs:NlpInput.KwArgs) {
+  constructor(o:Nlp.Iinput) {
 
     var s = new Sentence("hello version two");
     // let v = new Verb("walks");
     s.tag();
     console.log(s.syllables());
 
-  }
-}
-module NlpInput {
-  // anywhere accessible as NlpInput.KwArgs
-  export interface KwArgs {
-    text?:string;
-    options?:Object;
   }
 }
