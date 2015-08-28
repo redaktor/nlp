@@ -1,4 +1,4 @@
-![-](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/lineBlue.png)
+![-](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/lineBlue.png)<br>
 ![logo](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/logo.png)
 **redaktor/text/nlp**<br>
 Natural-Language-Processing
