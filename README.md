@@ -27,7 +27,7 @@ grunt
 
 We appreciate your interest!
 Please see our [Contributing Guidelines](./contributing.md#readme).<br>
-Please read also the [Dojo Guidelines Repository](https://github.com/dojo/guidelines#readme) for the
+Check the [Dojo Guidelines Repository](https://github.com/dojo/guidelines#readme) for the
 general Contributing Guidelines and Style Guide.
 
 ## Testing
