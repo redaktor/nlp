@@ -2,7 +2,7 @@
 ![logo](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/logo.png)
 **redaktor/text/nlp**<br>
 Natural-Language-Processing<br><br>
-![logo](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/shields/slackInvite.png)
+![https://redaktor-slackin.herokuapp.com](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/shields/slackInvite.png)
 ## nlp [WIP]
 
 # Currently writing a README. Please stand by.
