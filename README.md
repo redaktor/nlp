@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/header01.png)
+![logo](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/lineBlue.png)
 
 redaktor/text/nlp
 Natural-Language-Processing
