@@ -1,37 +1,38 @@
-import Term = require('../term/term');
-import fns = require('../fns.js');
+/**
+ * a sentence is an array of Term objects, along with their various methods <br>
+ * methods that hang on a parsed set of words
+ * @module src/pos/sentence
+ */
+import _ = require('../_');
+import Nlp = require('./module');
+import Term = require('../term/index');
 import tagger = require('./pos/tagger.js');
-
-//a sentence is an array of Term objects, along with their various methods
+const TYPES = {
+  '?': 'interrogative',
+  '!': 'exclamative',
+  '.': 'declarative'
+}
+//
 class Sentence {
 
-  str:String = '';
+  str:string = '';
   terms:any[] = [];
 
-  constructor(str:String) {
-    this.str = str || '';
-    let terms = str.split(' ');
-    this.terms = terms.map(function(s, i) {
+  constructor(str:string = '') {
+    this.str = str;
+    this.terms = str.split(' ').map(function(s, i) {
       let info = {
         index: i
-      }
+      };
       return new Term(s, info);
     });
   }
 
   //Sentence methods:
-
   //the ending punctuation
   terminator() {
-    let allowed = {
-      '.': true,
-      '!': true,
-      '?': true
-    }
     let char = this.str.slice(-1) || '';
-    if (allowed[char]) {
-      return char
-    }
+    if (TYPES[char]) { return char; }
     return '.';
   }
 
@@ -44,23 +45,19 @@ class Sentence {
   //is it a question/statement
   sentence_type() {
     let char = this.terminator()
-    let types = {
-      '?': 'interrogative',
-      '!': 'exclamative',
-      '.': 'declarative',
-    }
-    return types[char] || 'declarative';
+
+    return TYPES[char] || 'declarative';
   }
 
   //map over Term methods
   normalized() {
-    return fns.pluck(this.terms, 'normal').join(' ');
+    return _.pluck(this.terms, 'normal').join(' ');
   }
   text() {
-    return fns.pluck(this.terms, 'text').join(' ');
+    return _.pluck(this.terms, 'text').join(' ');
   }
   parents() {
-    return fns.pluck(this.terms, 'parent');
+    return _.pluck(this.terms, 'parent');
   }
 }
 

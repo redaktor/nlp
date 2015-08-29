@@ -65,4 +65,4 @@ let britishize = function(str) {
 // console.log(britishize("synthesize") === "synthesise")
 // console.log(britishize("synthesized") === "synthesised")
 
-module.exports = britishize
+export = britishize;

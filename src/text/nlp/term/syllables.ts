@@ -1,15 +1,17 @@
-//chop a string into pronounced syllables
-"use strict";
+/**
+ * chop a string into pronounced syllables
+ * @module term/syllables
+ */
+// TODO i18n
+// resources for all languages by Mathias: 
+// https://github.com/mnater/Hyphenator/tree/master/patterns
+
 
 //suffix fixes
-function postprocess(arr) {
+function postprocess(arr:string[]) {
   //trim whitespace
-  arr = arr.map(function(w) {
-    return w.trim()
-  })
-  if (arr.length > 2) {
-    return arr
-  }
+  arr = arr.map(function(w) { return w.trim(); })
+  if (arr.length > 2) { return arr; }
   var ones = [
     /^[^aeiou]?ion/,
     /^[^aeiou]?ised/,
@@ -87,4 +89,4 @@ let syllables = function(str) {
 
 // console.log(syllables("suddenly"))
 
-module.exports = syllables
+export = syllables;

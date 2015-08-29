@@ -58,4 +58,4 @@ let americanize = function(str) {
 // console.log(americanize("synthesise") === "synthesize")
 // console.log(americanize("synthesised") === "synthesized")
 
-module.exports = americanize
+export = americanize

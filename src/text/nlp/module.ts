@@ -6,7 +6,7 @@ module NLP {
   };
   export interface ISentence {
     str:string;
-    terms:any[];
-  }
+    terms?:any[];
+  };
 }
 export = NLP;

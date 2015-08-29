@@ -74,7 +74,7 @@ function replBase(a, r, s, baseI){
 	}.bind(this));
 }
 // helpers
-function normalise (s, exclDot, leaveCase) {
+function normalize (s, exclDot, leaveCase) {
 	// TODO - does it handle all european languages?
 	if (!s) { return ''; }
 	if (!leaveCase) { s = s.toLowerCase(); }
@@ -290,7 +290,7 @@ module.exports = {
 	repl: repl,
 	replBase: replBase,
 	// helpers
-	normalise: normalise,
+	normalize: normalize,
 	addNextLast: addNextLast,
 	toTitlecase: toTitlecase,
 	toCamelCase: toCamelCase,

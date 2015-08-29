@@ -18,9 +18,12 @@ declare var nlp;
  * @returns {Promise}
  * @summary a Natural-Language-Processing library in JS
  */
+ // TODO "use strict" only ES6 ! https://github.com/Microsoft/TypeScript/issues/3576
+ // i18n warnings, see https://github.com/mnater/Hyphenator/blob/master/Hyphenator.js
 
-// let's not block anything - we return promises ...
+// interfaces:
 import Nlp = require('./module');
+// let's not block anything - we return promises :
 import Promise = require('../../dojo/Promise');
 import Sentence = require('./sentence/index');
 

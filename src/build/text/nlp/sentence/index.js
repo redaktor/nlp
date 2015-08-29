@@ -1,14 +1,24 @@
-var Term = require('../term/term');
-var fns = require('../fns.js');
+/**
+ * a sentence is an array of Term objects, along with their various methods <br>
+ * methods that hang on a parsed set of words
+ * @module src/pos/sentence
+ */
+var _ = require('../_');
+var Term = require('../term/index');
 var tagger = require('./pos/tagger.js');
-//a sentence is an array of Term objects, along with their various methods
+var TYPES = {
+    '?': 'interrogative',
+    '!': 'exclamative',
+    '.': 'declarative'
+};
+//
 var Sentence = (function () {
     function Sentence(str) {
+        if (str === void 0) { str = ''; }
         this.str = '';
         this.terms = [];
-        this.str = str || '';
-        var terms = str.split(' ');
-        this.terms = terms.map(function (s, i) {
+        this.str = str;
+        this.terms = str.split(' ').map(function (s, i) {
             var info = {
                 index: i
             };
@@ -18,13 +28,8 @@ var Sentence = (function () {
     //Sentence methods:
     //the ending punctuation
     Sentence.prototype.terminator = function () {
-        var allowed = {
-            '.': true,
-            '!': true,
-            '?': true
-        };
         var char = this.str.slice(-1) || '';
-        if (allowed[char]) {
+        if (TYPES[char]) {
             return char;
         }
         return '.';
@@ -37,22 +42,17 @@ var Sentence = (function () {
     //is it a question/statement
     Sentence.prototype.sentence_type = function () {
         var char = this.terminator();
-        var types = {
-            '?': 'interrogative',
-            '!': 'exclamative',
-            '.': 'declarative',
-        };
-        return types[char] || 'declarative';
+        return TYPES[char] || 'declarative';
     };
     //map over Term methods
     Sentence.prototype.normalized = function () {
-        return fns.pluck(this.terms, 'normal').join(' ');
+        return _.pluck(this.terms, 'normal').join(' ');
     };
     Sentence.prototype.text = function () {
-        return fns.pluck(this.terms, 'text').join(' ');
+        return _.pluck(this.terms, 'text').join(' ');
     };
     Sentence.prototype.parents = function () {
-        return fns.pluck(this.terms, 'parent');
+        return _.pluck(this.terms, 'parent');
     };
     return Sentence;
 })();
