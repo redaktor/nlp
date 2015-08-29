@@ -2,6 +2,7 @@
 [![GitHub version](https://badge.fury.io/gh/redaktor%2Fnlp.svg)](http://badge.fury.io/gh/redaktor%2Fnlp)
 <br><br>
 [![logo](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/logo.png)](#)
+
 **redaktor/text/nlp**<br>
 Natural-Language-Processing<br>
 [![-](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/lineBlue.png)](#)<br>
@@ -9,6 +10,7 @@ Natural-Language-Processing<br>
 # redaktor-text-nlp [wip]
 
 TODO: Replace with a description of this package
+See [this fork](https://github.com/redaktor/nlp_compromise) to get an idea ...
 
 ## Features
 
