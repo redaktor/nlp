@@ -43,4 +43,4 @@ TODO: If third-party code was used to write this library, make a list of project
 
 * [Third-party lib one](https//github.com/foo/bar) ([New BSD](http://opensource.org/licenses/BSD-3-Clause))
 
-© 2014–2015 redaktor Foundation & contributors. [New BSD](http://opensource.org/licenses/BSD-3-Clause) license.
+© 2014–2015 redaktor foundation & contributors. [New BSD](http://opensource.org/licenses/BSD-3-Clause) license.
