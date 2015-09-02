@@ -1,3 +1,5 @@
+## POS word tags
+
 | Tag  | Description                               | Example                    |
 |-----:|-------------------------------------------|----------------------------|
 |```Verb```|||
@@ -50,3 +52,15 @@
 | :    | punctuation mark, colon                   | :                          |
 | (    | contextual separator, left paren          | (                          |
 | )    | contextual separator, right paren         | )                          |
+
+## POS phrase tags (chunks of words)
+| Tag  | Description               | Words            | Example          | %  |
+|-----:|---------------------------|------------------|------------------|---:|
+| NP   | noun phrase               | DT+RB+JJ+NN + PR | the strange bird | 51 |
+| PP   | prepositional phrase      | TO+IN            | in between       | 19 |
+| VP   | verb phrase               | RB+MD+VB         | was looking      | 9  |
+| ADVP | adverb phrase             | RB               | also             | 6  |
+| ADJP | adjective phrase          | CC+RB+JJ         | warm and cosy    | 3  |
+| SBAR | subordinating conjunction | IN               | whether or not   | 3  |
+| PRT  | particle                  | RP               | up the stairs    | 1  |
+| INTJ | interjection              | UH               | hello            | < 1|
