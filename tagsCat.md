@@ -33,13 +33,6 @@
 | IN   | conjunction, subordinating or preposition | of, on, before, unless     |
 | MD   | verb, modal auxillary                     | may, should                |
 | UH   | interjection                              | oh, oops, gosh             |
-|:construction: ```TODO```|*not implemented yet properly*:||
-| TO   | infinitival to                            | what to do?                |
-| WDT  | wh-determiner                             | which, whatever, whichever |
-| WP   | wh-pronoun, personal                      | what, who, whom            |
-| WP$  | wh-pronoun, possessive                    | whose, whosever            |
-| WRB  | wh-adverb                                 | where, when                |
-| PDT  | predeterminer                             | both his children          |
 |```Value```|||
 | CD   | cardinal number                           | five, three, 13%           |
 | CDV  | cardinal value <br>(with unit of measurement or currency) | 220 km/h, 11€ |
@@ -52,6 +45,13 @@
 | :    | punctuation mark, colon                   | :                          |
 | (    | contextual separator, left paren          | (                          |
 | )    | contextual separator, right paren         | )                          |
+|:construction: ```TODO```|*not implemented yet properly*:||
+| TO   | infinitival to                            | what to do?                |
+| WDT  | wh-determiner                             | which, whatever, whichever |
+| WP   | wh-pronoun, personal                      | what, who, whom            |
+| WP$  | wh-pronoun, possessive                    | whose, whosever            |
+| WRB  | wh-adverb                                 | where, when                |
+| PDT  | predeterminer                             | both his children          |
 
 ## POS phrase tags (chunks of words)
 | Tag  | Description               | Words            | Example          | %  |
