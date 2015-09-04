@@ -85,10 +85,10 @@ function first(a) {
 function last(a) {
 	if (typeof a != 'object') { return a; }
 	if (a instanceof Array) { return a[a.length-1]; }
-	let keys = Object.keys[a][0];
+	var keys = Object.keys[a][0];
 	return a[keys[keys.length-1]];
 }
-function values(a, key?) {
+function values(a, key) {
 	if (typeof a != 'object') { return a; }
 	if (a instanceof Array) {
 		// if key -> flatten subobjects:
