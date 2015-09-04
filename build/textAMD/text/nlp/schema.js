@@ -8,14 +8,24 @@ define(["require", "exports"], function (require, exports) {
      * @readonly
      * @module text/nlp/schema
      */
-    var schema = { parents: ['verb', 'adjective', 'adverb', 'noun', 'glue', 'value'],
-        tags: [['VB', 'verb, generic', 0],
+    var schema = {
+        parents: ['verb', 'adjective', 'adverb', 'noun', 'glue', 'value'],
+        tags: [
+            /*
+             VB	verb, generic (base form)	think
+             VBZ	verb, 3rd person singular present	she thinks
+             VBP	verb, non-3rd person singular present	I think
+             VBD	verb, past tense	they thought
+             VBN	verb, past participle	a sunken ship
+             VBG	verb, gerund or present participle	thinking is fun
+            */
+            ['VB', 'verb, generic', 0],
             ['VBD', 'past-tense verb', 0, 'past'],
             ['VBN', 'past-participle verb', 0, 'past'],
             ['VBP', 'infinitive verb', 0, 'present'],
             ['VBF', 'future-tense verb', 0, 'future'],
             ['VBZ', 'present-tense verb', 0, 'present'],
-            ['CP', 'copula', 0],
+            ['VCP', 'copula', 0],
             ['VBG', 'gerund verb', 0],
             ['JJ', 'adjective, generic', 1],
             ['JJR', 'comparative adjective', 1],
@@ -43,7 +53,8 @@ define(["require", "exports"], function (require, exports) {
             ['CC', 'co-ordating conjunction', 4],
             ['DT', 'determiner', 4],
             ['UH', 'interjection', 4],
-            ['EX', 'existential there', 4]],
+            ['EX', 'existential there', 4]
+        ],
         tense: { infinitive: { en: 'infinitive', de: 'Infinitiv', tag: 'VBP', base: 1 },
             present: { en: 'present', de: 'Präsenz', tag: 'VBZ', base: 1 },
             past: { en: 'past', de: 'Imperfekt', tag: 'VBD', base: 1 },

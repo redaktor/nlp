@@ -6,17 +6,17 @@ define(["require", "exports", '../_', '../term/index', './pos/index'], function 
     };
     //
     var Sentence = (function () {
-        function Sentence(str) {
+        function Sentence(str, options) {
             if (str === void 0) { str = ''; }
             this.str = '';
             this.terms = [];
+            this.options = options;
             this.str = str;
             this.terms = str.split(' ').map(function (s, i) {
-                var info = {
-                    index: i
-                };
+                var info = { index: i };
                 return new Term(s, info);
             });
+            return this;
         }
         // Sentence methods:
         // the ending punctuation
@@ -34,18 +34,17 @@ define(["require", "exports", '../_', '../term/index', './pos/index'], function 
         };
         // is it a question/statement
         Sentence.prototype.sentence_type = function () {
-            var char = this.terminator();
-            return TYPES[char] || 'declarative';
+            return TYPES[this.terminator()] || 'declarative';
         };
         // map over Term methods
         Sentence.prototype.normalized = function () {
-            return _.pluck(this.terms, 'normal').join(' ');
+            return _.values(this.terms, 'normal').join(' ');
         };
         Sentence.prototype.text = function () {
-            return _.pluck(this.terms, 'text').join(' ');
+            return _.values(this.terms, 'text').join(' ');
         };
         Sentence.prototype.parents = function () {
-            return _.pluck(this.terms, 'parent');
+            return _.values(this.terms, 'parent');
         };
         return Sentence;
     })();

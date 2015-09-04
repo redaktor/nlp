@@ -1,17 +1,13 @@
-define(["require", "exports", './_options', '../../dojo/lang', './text/index'], function (require, exports, defaultOptions, lang, Text) {
+define(["require", "exports", './_options', '../../dojo/lang', './text/index'], function (require, exports, def, lang, Text) {
     var NLP = (function () {
         function NLP(o) {
-            this.options = defaultOptions;
-            this.language = 'en';
+            this.options = def;
             this.options = lang.mixin(this.options, o);
+            return this;
         }
         NLP.prototype.set = function (v) {
             if (typeof v === 'string') {
-                if (v.length < 3) {
-                    this.language = v;
-                    return this.language;
-                }
-                return new Text(v);
+                return new Text(this.options).set(v);
             }
             else {
                 this.options = lang.mixin(this.options, v);

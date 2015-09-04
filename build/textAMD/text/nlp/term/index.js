@@ -6,14 +6,15 @@ define(["require", "exports", '../_', "./syllables", "./americanize", "./british
     var Term = (function () {
         function Term(str, info) {
             if (str === void 0) { str = ''; }
+            this.text = '';
+            this.reason = '';
             this.text = str.trim();
             this.normal = this.normalize();
-            this.reason = '';
         }
         // Term methods..
         Term.prototype.normalize = function () { return _.normalize(this.text, true); };
-        Term.prototype.is_capital = function () { return REGEXES.capital.test(this.text); };
-        Term.prototype.is_acronym = function () { return REGEXES.acronym.test(this.text); };
+        Term.prototype.isCapital = function () { return REGEXES.capital.test(this.text); };
+        Term.prototype.isAcronym = function () { return REGEXES.acronym.test(this.text); };
         Term.prototype.americanize = function () { return americanize(this.normal); };
         Term.prototype.britishize = function () { return britishize(this.normal); };
         Term.prototype.syllables = function () { return syllables(this.normal); };
@@ -21,3 +22,5 @@ define(["require", "exports", '../_', "./syllables", "./americanize", "./british
     })();
     return Term;
 });
+// var t = new Term("synthesise")
+// console.log(t.americanize())

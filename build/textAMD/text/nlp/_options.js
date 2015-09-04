@@ -6,8 +6,10 @@
  */
 define(["require", "exports"], function (require, exports) {
     return {
+        language: 'en',
+        languageDetection: false,
         cache: {
-            size: 256,
+            size: 128,
             db: false
         },
         pos: {

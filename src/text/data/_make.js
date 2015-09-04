@@ -43,8 +43,8 @@
 var fs = require('fs');
 var path = require('path');
 var util = require('util');
-// changes to absolute path if used as module :
-var PATH = './';
+// target, changes to absolute path if used as module :
+var PATH = '../nlp/nls/';
 function absPath(fName){ return path.join(path.dirname(fName),PATH); }
 function setMyPath(site){
 	// automatically set data path from the callsite (see module.exports)

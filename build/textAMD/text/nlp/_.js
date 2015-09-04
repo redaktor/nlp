@@ -5,12 +5,6 @@
 // TODO strong type
 define(["require", "exports", '../../_'], function (require, exports, _) {
     // helpers
-    function pluck(a, s) {
-        return a.map(function (o) {
-            return o[s];
-        });
-    }
-    ;
     function normalize(s, exclDot, leaveCase) {
         // TODO - does it handle all european languages?
         if (!s) {
@@ -95,7 +89,6 @@ define(["require", "exports", '../../_'], function (require, exports, _) {
         repl: _.repl,
         replBase: _.replBase,
         // helpers
-        pluck: pluck,
         normalize: normalize,
         addNextLast: addNextLast,
         toTitlecase: _.toTitlecase,
@@ -115,6 +108,7 @@ define(["require", "exports", '../../_'], function (require, exports, _) {
         hasL: _.hasL,
         first: _.first,
         last: _.last,
+        any: _.any,
         str: _.str,
         obj: _.obj,
         shallow: _.shallow,
