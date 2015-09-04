@@ -45,7 +45,7 @@ TODO: If third-party code was used to write this library, make a list of project
 
 © 2014–2015 redaktor foundation & contributors. [New BSD](http://opensource.org/licenses/BSD-3-Clause) license.
 [![-](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/lineBlue.png)](#)
-**appendix:**
+**appendix**
 ## POS word tags
 
 | Tag  | Description                               | Example                    |
