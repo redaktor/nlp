@@ -2,19 +2,19 @@
 declare var require/*: Require*/;
 declare var define: any;
 import has = require('../../dojo/has');
-import m = require('./en/index');
+import m = require('./nls/en/index');
 
 // see also https://github.com/dojo/loader/issues/29 :
 // TODO - might change to dojo loader plugin ...
 function loadData(lang:string, keys:string[], callback?:any) {
   var hasCallback = (callback && typeof callback === 'function');
   const toModuleKeys = function(key:string) : string{
-    return ['./',lang,'/',key].join('');
+    return ['./nls/',lang,'/',key].join('');
   }
   // TODO - make it optional:
   // options like {commonjsMinify:false, amdMinify:true} :
   const toMinModuleKeys = function(key:string) : string{
-    return ['./',lang,'/',key,'.min'].join('');
+    return ['./nls/',lang,'/',key,'.min'].join('');
   }
   const keysMin = keys.map(toMinModuleKeys);
   keys = keys.map(toModuleKeys);
