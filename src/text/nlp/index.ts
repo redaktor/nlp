@@ -12,7 +12,7 @@ declare var nlp;
  *
  * <code>var nlp = new NLP(text, options);<br>nlp.myMethod ...</code>
  * <br>
- * @module index
+ * @module text/nlp/index
  * @param {text} text
  * @param {object} options
  * @returns {Promise}
@@ -22,18 +22,26 @@ declare var nlp;
  // i18n warnings, see https://github.com/mnater/Hyphenator/blob/master/Hyphenator.js
 
 // interfaces:
-import Nlp = require('./module');
-// let's not block anything - we return promises :
-import Promise = require('../../dojo/Promise');
-import Sentence = require('./sentence/index');
+import Nlp = require('./interfaces.d');
+import def = require('./_options');
+import _ = require('./_');
+import lang = require('../../dojo/lang');
+import Text = require('./text/index');
 
-export class NLP {
-  constructor(o:Nlp.Iinput) {
-
-    var s = new Sentence("hello version two");
-    // let v = new Verb("walks");
-    s.tag();
-    console.log(s.syllables());
-
+class NLP {
+  options:Nlp.IOptions = def;
+  constructor(o:Nlp.IOptions) {
+    this.options = lang.mixin(this.options, o);
+    return this;
+  }
+  set(v:string|Object) {
+  	if (typeof v === 'string') {
+  		return new Text(this.options).set(v);
+  	} else {
+      this.options = lang.mixin(this.options, v);
+      return this.options;
+  	}
+  	return v;
   }
 }
+export = NLP;
