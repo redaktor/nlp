@@ -1,43 +1,46 @@
-console.log( ' ' );
-colors = ['\u001b[32m', '\u001b[39m'];
-var lexiMain = [clean(buildLexi(lang))];
-var lexiZip = [clean(buildLexi(lang, true))];
-var lexiStd = [C._, C.mod0, 'main;', C._];
-fs.writeFileSync(	path.join(PATH, lang, '/lexicon/index.ts'), lexiMain.concat(lexiStd).join(''));
-fs.writeFileSync(	path.join(PATH, lang, '/lexicon/index.min.ts'), lexiZip.concat(lexiStd).join(''));
-console.log( 'wrote', colors[0], 'lexicon file', colors[1], 'for language', '"'+lang+'"');
-console.log( ' ' );
 // put words which are NOT yet in other modules in the lexicon NOW
 // the same function (without arguments) is used in the lexicon to add words which ARE in other modules LATER...
 // TODO FIXME 'a' MUST NOT be a NU - it will be added by rules dict.
+var fs = require('fs');
+var path = require('path');
+var util = require('util');
+var __ = require('./_');
+var _ = require('../../../_');
+var dict = require('../dictionary');
+var data = {};
+const COLORS = ['\u001b[32m', '\u001b[39m'];
+//_names.forEach(reqModule);
+// TODO - rest of VBN should be in lexicon.js already - also for sl "// TODO adjectives_regular"
+var __VBN = dict.VBN.words.filter(function(o) { return (__.possible(o) && o.hasOwnProperty('ref')); }).map(__.val);
+
 function lexicon(cat){
 	var nrOnes = Object.keys(data.numbers.ones).filter(function(s){ return s!='a' })
 	var did = {
-		NN: data.nouns_inflect.NN.map(function(a){ return a[0]; }).concat(Object.keys(data.nouns_inflect.uncountables)),
-		NNS: data.nouns_inflect.NN.map(function(a){ return a[1]; }),
+		NN: data.nounsInflect.NN.map(function(a){ return a[0]; }).concat(Object.keys(data.nounsInflect.uncountables)),
+		NNS: data.nounsInflect.NN.map(function(a){ return a[1]; }),
 		VBN: __VBN,
-		VBD: data.verbs_conjugate.irregulars.map(function(o){ return o.past; }),
-		VBG: data.verbs_conjugate.irregulars.map(function(o){ return o.gerund; }),
-		RB: Object.keys(data.adverbs_decline).concat(Object.keys(data.adjectives_decline.adverb.to).map(function(s) {
-			return data.adjectives_decline.adverb.to[s];
+		VBD: data.verbsConjugate.irregulars.map(function(o){ return o.past; }),
+		VBG: data.verbsConjugate.irregulars.map(function(o){ return o.gerund; }),
+		RB: Object.keys(data.adverbsDecline).concat(Object.keys(data.adjectivesDecline.adverb.to).map(function(s) {
+			return data.adjectivesDecline.adverb.to[s];
 		})),
 	}
 	var lexiZip = {
-		NNA: Object.keys(data.verbs_conjugate.irregularDoers).map(function(s){ return data.verbs_conjugate.irregularDoers[s];  }),
+		NNA: Object.keys(data.verbsConjugate.irregularDoers).map(function(s){ return data.verbsConjugate.irregularDoers[s];  }),
 		NNAB: data.abbreviations.nouns,
 		NNP: Object.keys(data.firstnames),
 		PP: Object.keys(data.nouns.PP),
 		PRP: Object.keys(data.nouns.PRP),
-		CP: Object.keys(data.verbs_special.CP),
-		MD: Object.keys(data.verbs_special.MD),
-		VBP: data.verbs_conjugate.irregulars.map(function(o){ return o.infinitive; }),
-		VBZ: data.verbs_conjugate.irregulars.map(function(o){ return o.present; }),
-		JJR: Object.keys(data.adjectives_decline.comparative.to).map(function(s){ return data.adjectives_decline.comparative.to[s]; }),
-		JJS: Object.keys(data.adjectives_decline.superlative.to).map(function(s){ return data.adjectives_decline.superlative.to[s]; }),
-		JJ: data.adjectives_demonym.concat(
-				Object.keys(data.adjectives_decline.adverb.no), Object.keys(data.adjectives_decline.adverb.to),
-				Object.keys(data.adjectives_decline.comparative.to), Object.keys(data.adjectives_decline.superlative.to),
-				Object.keys(data.adverbs_decline).map(function(s) { return data.adverbs_decline[s]; })
+		CP: Object.keys(data.verbsSpecial.CP),
+		MD: Object.keys(data.verbsSpecial.MD),
+		VBP: data.verbsConjugate.irregulars.map(function(o){ return o.infinitive; }),
+		VBZ: data.verbsConjugate.irregulars.map(function(o){ return o.present; }),
+		JJR: Object.keys(data.adjectivesDecline.comparative.to).map(function(s){ return data.adjectivesDecline.comparative.to[s]; }),
+		JJS: Object.keys(data.adjectivesDecline.superlative.to).map(function(s){ return data.adjectivesDecline.superlative.to[s]; }),
+		JJ: data.adjectivesDemonym.concat(
+				Object.keys(data.adjectivesDecline.adverb.no), Object.keys(data.adjectivesDecline.adverb.to),
+				Object.keys(data.adjectivesDecline.comparative.to), Object.keys(data.adjectivesDecline.superlative.to),
+				Object.keys(data.adverbsDecline).map(function(s) { return data.adverbsDecline[s]; })
 		),
 		CD: nrOnes.concat(
 			Object.keys(data.numbers.teens),
@@ -77,7 +80,7 @@ function lexicon(cat){
 			for (var tense in c) {
 				if (tense != 'doer') {
 					phrasal = c[tense] + ' ' + particle;
-					main[phrasal] = data.schema.getTense(tense).tag;
+					main[phrasal] = schema.getTense(tense).tag;
 				}
 			}
 		}
@@ -85,16 +88,16 @@ function lexicon(cat){
 		c = {};
 		data.verbs.forEach(function(verb) {
 			c = parents.verb(verb).conjugate();
-			for (var tense in data.schema._tense) {
+			for (var tense in schema._tense) {
 				if (c[tense] && !main[c[tense]]) {
-					main[c[tense]] = data.schema.getTense(tense).tag;
+					main[c[tense]] = schema.getTense(tense).tag;
 				}
 			}
 		});
 		// decline all adjectives to their adverbs_ (~13ms)
 		// 'to_adverb','to_superlative','to_comparative'
 		// to_methods are slightly more performant than .conjugate because we skip to_noun yet ...
-		data.adjectives.concat(Object.keys(data.adjectives_decline.convertables)).forEach(function(adjective) {
+		data.adjectives.concat(Object.keys(data.adjectivesDecline.convertables)).forEach(function(adjective) {
 			if (!main.hasOwnProperty(adjective)) {
 				main[adjective] = 'JJ';
 				var adj = parents.adjective(adjective);
@@ -119,7 +122,24 @@ function lexicon(cat){
 	return [];
 }
 
-module.exports = function (lang, isZip) {
+module.exports = function (PATH, maker, _data, lang, isZip) {
+	data = _data;
+	const C = {
+		_: '\n',
+		_var: 'import ',
+		col: ': ',
+		req1: " = require('./",
+		req2: "');\n",
+		exp0: '{\n',
+		exp1: '\nvar zip:any = {\n',
+		exp2: '\n};',
+		_exp: '\n  var zip:any = ',
+		un1: '\n  var unzip = ',
+		un2: '\n  unzip();\n',
+		main: 'var main = {};\n',
+		mod: '\nexport = ',
+		tab: '	'
+	};
 	var _lMain = {};
 	var _lZip = {};
 	// TODO
@@ -127,9 +147,13 @@ module.exports = function (lang, isZip) {
 
 	// Now let's handle the module names
 	// for data modules index and lexicon
-	var _names = maker.map(function(g) {
+	var _names = maker.map(function(key) {
+		var g = require('./'+key);
+		var folder = (g.folder && g.folder != 'lexicon') ? g.folder : '';
+		var name = (g.id === 'index') ? '' : g.id;
+		if (folder.length > 0) { name = _.toTitlecase(name); }
 		return {
-			_var: [((g.folder && g.folder != 'lexicon') ? g.folder+'_' : ''), g.id].join('').replace('_index',''),
+			_var: [folder, name].join(''),
 			_req: (g.folder) ? path.join(g.folder, g.id) : g.id
 		};
 	});
@@ -137,9 +161,6 @@ module.exports = function (lang, isZip) {
 	// require data modules for use in build
 	// TODO
 	function reqModule(o) { data[o._var] = require(['./', path.join(lang, o._req)].join('')); }
-	//_names.forEach(reqModule);
-	// TODO - rest of VBN should be in lexicon.js already - also for sl "// TODO adjectives_regular"
-	var __VBN = dict.VBN.words.filter(function(o) { return (__.possible(o) && o.hasOwnProperty('ref')); }).map(__.val);
 
 	// write the data modules INDEX for build, lexicon and as survey
 	var names = [];
@@ -154,17 +175,21 @@ module.exports = function (lang, isZip) {
 	});
 
 	var exportStr = _exports.join('').slice(0,-2);
-	names.push(C._, C.mod0, C.exp0, exportStr, C.exp2);
+	names.push(C._, C.mod, C.exp0, exportStr, C.exp2);
 	fs.writeFileSync(	path.join(PATH, lang, '/index.ts'), '// data index for "'+ lang + '"\n' + names.join('')	);
 	fs.writeFileSync(	path.join(PATH, lang, '/index.min.ts'), names.join('').replace(/'\);/gm, ".min');") );
+	console.log( 'wrote', COLORS[0], 'index', (isZip ? '.min' : ''), COLORS[1], 'for language', '"'+lang+'"');
 
 	// now require this index module and other needed modules in the LEXICON
 	var reqs = [
 		C.l, C._,
+		"import _ = require('../../../nlp/_');", C._,
 		"import data = require('../index');", C._,
-		"import parents = require('../../../parents'); // TODO - does not exist yet", C._, //TODO
+		"import schema = require('../../../nlp/schema');", C._,
+		"import parents = require('../../../nlp/parents'); // TODO - does not exist yet", C._, //TODO
 		C.main
 	];
+
 	var _did = lexicon(1);
 	['EX', 'NN', 'NNS', 'CC', 'VBD', 'VBN', 'VBG', 'DT', 'IN', 'PP', 'UH', 'FW', 'RB', 'RBR', 'RBS'].forEach(function(cat) {
 		_lMain[cat] = [];
@@ -175,12 +200,12 @@ module.exports = function (lang, isZip) {
 			if (cat === 'NN') dw = dw.filter(function(o) {
 				if (o.hasOwnProperty('meta') && o.meta.noVerb) {
 					var checkLang = (o.meta.noVerb instanceof Array) ? o.meta.noVerb : Object.keys(o.meta.noVerb);
-					return (Object.keys(data.nouns_inflect.uncountables).indexOf(o[lang]) < 0 && checkLang.indexOf(lang) > -1);
+					return (Object.keys(data.nounsInflect.uncountables).indexOf(o[lang]) < 0 && checkLang.indexOf(lang) > -1);
 				}
 				return false;
 			});
 			if (cat === 'NNS') dw = dw.filter(function(o) {
-				return (Object.keys(data.nouns_inflect.uncountables).indexOf(o[lang]) < 0);
+				return (Object.keys(data.nounsInflect.uncountables).indexOf(o[lang]) < 0);
 			});
 
 			var possibleLexi = function(w) {
@@ -204,4 +229,9 @@ module.exports = function (lang, isZip) {
 	reqs.push(C._exp, lexiconStr, C.un1, genStr, C.un2);
 	lexiconStr = reqs.join('');
 	_names.push('lexicon.ts');
+	var lexiStd = [C._, C.mod, 'main;', C._].join('');
+	var fPath = ['/lexicon/index',(isZip ? '.min.ts' : '.ts')].join('');
+	fs.writeFileSync(	path.join(PATH, lang, fPath), lexiconStr+lexiStd);
+	console.log( 'wrote', COLORS[0], 'lexicon'+(isZip ? ' .min' : ''), 'file', COLORS[1], 'for language', '"'+lang+'"');
+	console.log( ' ' );
 }

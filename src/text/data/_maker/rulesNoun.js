@@ -1,6 +1,6 @@
 // 24 rules noun
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
+var _ = require('../../../_');
 var dict = require('../dictionaryRules'), zip;
 module.exports = {
   id: 'noun',

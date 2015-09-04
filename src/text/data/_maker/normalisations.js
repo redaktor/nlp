@@ -1,6 +1,5 @@
 // 19 normalisations rules
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
 var dict = require('../dictionaryRules'), zip;
 module.exports = {
   id: 'normalisations',

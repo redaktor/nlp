@@ -1,6 +1,4 @@
 // 12 dates
-var _ = require('../../nlp/_');
-var __ = require('../_');
 var dict = require('../dictionary'), zip;
 module.exports = {
   id: 'dates',

@@ -1,6 +1,6 @@
 // 1 sort out multiple words
-var _ = require('../../nlp/_');
-var __ = require('../_'), zip;
+var __ = require('./_');
+var _ = require('../../../_');
 module.exports = {
 	id: 'multiples',
 	folder: 'lexicon',

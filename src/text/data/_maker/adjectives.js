@@ -1,6 +1,6 @@
 // 9 other adjectives
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
+var _ = require('../../../_');
 module.exports = {
   id: 'index',
   folder: 'adjectives',

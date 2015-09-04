@@ -1,6 +1,5 @@
 // 22 rules sentence
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
 var dict = require('../dictionaryRules');
 module.exports = {
   id: 'sentence',

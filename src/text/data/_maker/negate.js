@@ -1,8 +1,7 @@
 // 16 negate
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
 var dict = require('../dictionary');
-var verbs_special;
+var verbs_special, zip;
 module.exports = {
   id: 'negate',
   folder: 'lexicon',
@@ -10,8 +9,10 @@ module.exports = {
   // build
   zip: function(lang, isZip) {
     verbs_special = require('./')('verbsSpecial',lang);
-    return __.val(dict.negate, {});
+    zip = __.val(dict.negate, {});
+    return zip;
   },
+  make: function(lang) { return this.unzip(); },
   prefix: "import verbs_special = require('../verbs/special');\n",
   // convert it to an easier format
   unzip: function() {

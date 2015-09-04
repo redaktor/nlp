@@ -1,6 +1,6 @@
 // 29 rules date
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
+var _ = require('../../../_');
 var words = require('../dictionary');
 var dict = require('../dictionaryRules'), data, zip;
 module.exports = {

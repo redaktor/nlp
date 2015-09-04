@@ -1,9 +1,11 @@
-// nlp_comprimise by @spencermountain  in 2014
 
-/* *********************************************************************************************************
-//	The main dictionary to build various language (or context) specific lexica -
-//  part 3 : Regex rules for each part of speech that convert it to all other parts of speech.
-********************************************************************************************************* */
+/**
+ * redaktor/nlp by @redaktor foundation and the contributors in 2015<br>
+ * *********************************************************************************************************
+ *	The main dictionary to build various language (or context) specific lexica -
+ *  part 3 : Regex rules for each part of speech that convert it to all other parts of speech.
+ * *********************************************************************************************************
+ */
 
 // see ./build.js for generating the lexica
 
@@ -13,27 +15,27 @@ module.exports = {
 // RULES FOR POS TAGGING
 // --------------------v
 pos: {
-	
+
 //: strongDeterminers
 // TODO - this might go to dictionary as flag 'strongDeterminer' (build automatically)
 // list strong noun determiners
 strongDeterminers: {
 	en: {the: 1, a: 1, an: 1}
 },
-	
+
 //: merge (preprocessing)
 // rules for pos merging of tokens
 /*
 	{{posReason}}: {
 		// condition
-		_if: function (token, tokenArray (sentence tokens), tokenIndex) { 
+		_if: function (token, tokenArray (sentence tokens), tokenIndex) {
 			return {{posCondition}}
 		},
 		tag: {{posTag}},
 		set: {{tokenIndexSetter}},
 		merge: {{tokenMergeCount}}
 	}
-	
+
 // {{posReason}} - a note going to the .pos
 // {{posCondition}} - the if condition for this rule
 // {{posTag}} - optional, default: null - if any token.pos receives a tag
@@ -101,12 +103,12 @@ ambiguousContractions: {
 },
 
 //: replacing (1st pass, for lexi)
-// all of these matches/replaces/replacer regex objects will be used in the pos lexi pass 
+// all of these matches/replaces/replacer regex objects will be used in the pos lexi pass
 // if they match the language. -
 // native regexes, set to 0, false or null if not needed in your language
 // {{matches}} finds
 // {{replaces}} replaces by {{replacer}}  // ({{replaces}} is optional, defaults to {{matches}})
-replacing: { 
+replacing: {
 	prefix: {
 		// try to match it without a prefix - eg. outworked -> worked
 		en: {
@@ -125,17 +127,17 @@ replacing: {
 		// condition
 		tag: {{posTag}},
 		set: {{tokenIndexSetter}},
-		_if: function (token, nextToken, lastToken, tokenIndex) { 
+		_if: function (token, nextToken, lastToken, tokenIndex) {
 			return {{posCondition}}
 		}
 	}
-	
+
 // {{posReason}} - a note going to the .pos
 // {{posCondition}} - the if condition for this rule
 // {{posTag}} - optional, default: null - if any token.pos receives a tag
 // {{tokenIndexSetter}} - optional, default: 0 - e.g. 1 for nextToken or -1 for lastToken
 */
-set: { 
+set: {
 	en: {
 		ed: {
 			tag: 'VB', // set ambiguous 'ed' endings as either verb/adjective
@@ -143,7 +145,7 @@ set: {
 		}
 	}
 },
-	
+
 //: special (3rd/last pass)
 // rules for pos exceptions (same signature like for setPos above) ::
 /*
@@ -151,17 +153,17 @@ set: {
 		// condition
 		tag: {{posTag}},
 		set: {{tokenIndexSetter}},
-		_if: function (token, nextToken, lastToken, tokenIndex) { 
+		_if: function (token, nextToken, lastToken, tokenIndex) {
 			return {{posCondition}}
 		}
 	}
-	
+
 // {{posReason}} - a note going to the .pos
 // {{posCondition}} - the if condition for this rule
 // {{posTag}} - optional, default: null - if any token.pos receives a tag
 // {{tokenIndexSetter}} - optional, default: 0 - e.g. 1 for nextToken or -1 for lastToken
 */
-special: { 
+special: {
 	en: {
 		mayIsDate: {
 			tag: 'CD', // resolve ambiguous 'march','april','may' with dates
@@ -365,7 +367,7 @@ words: {
 // RULES FOR SENTENCES
 // ------------------v
 sentence: {
-	
+
 	//: negate
 	// the rules for pos merging of tokens
 	negate: {
@@ -390,14 +392,14 @@ sentence: {
 				_if: function (t) { return (t.analysis.tense === 'present'); }
 			},
 			future: {
-				prefix: "won't", 
+				prefix: "won't",
 				tense: 'infinitive',
 				_if: function (t) { return (t.analysis.tense === 'future' && t.normalised.match(/will\b/)); }
 			}
 		}
 		//, end of english
 	}
-	
+
 },
 // end of SENTENCES rules
 
@@ -488,7 +490,7 @@ nouns: {
 				]
 			}
 		},
-		// correction function		
+		// correction function
 		fn: {
 			// runs in the scope of noun (this.word, this.METHODS)
 			en: function() {
@@ -501,7 +503,7 @@ nouns: {
 			}
 		}
 	},
-	
+
 	isPluralFallback: {
 		en:	function(word) {
 			// 'looks pretty plural' rules - TODO // needs some lovin' :
@@ -783,7 +785,7 @@ verbs: {
 					infinitive: '$1', present: '$1s', past: '$1ed'
 				}
 			],
-			//: 
+			//:
 			past: [
 				{
 					regex: '(ued)$',
@@ -849,7 +851,7 @@ verbs: {
 		}
 		//, end of conjugate english
 	},
-	
+
 	//: verb suffixes
 	suffixes: {
 		en: {
@@ -858,20 +860,20 @@ verbs: {
 				'ing'
 			],
 			infinitive: [
-				'ate', 'ize', 'tion', 'rify', 'ress', 'ify', 'age', 'nce', 'ect', 'ise', 'ine', 'ish', 
-				'ace', 'ash', 'ure', 'tch', 'end', 'ack', 'and', 'ute', 'ade', 'ock', 'ite', 'ase', 
+				'ate', 'ize', 'tion', 'rify', 'ress', 'ify', 'age', 'nce', 'ect', 'ise', 'ine', 'ish',
+				'ace', 'ash', 'ure', 'tch', 'end', 'ack', 'and', 'ute', 'ade', 'ock', 'ite', 'ase',
 				'ose', 'use', 'ive', 'int', 'nge', 'lay', 'est', 'ain', 'ant', 'eed', 'er', 'le'
 			],
 			past: [ 'ed', 'lt', 'nt', 'pt', 'ew', 'ld' ],
 			present: [
-				'rks', 'cks', 'nks', 'ngs', 'mps', 'tes', 'zes', 'ers', 'les', 'acks', 'ends', 'ands', 
-				'ocks', 'lays', 'eads', 'lls', 'els', 'ils', 'ows', 'nds', 'ays', 'ams', 'ars', 'ops', 
+				'rks', 'cks', 'nks', 'ngs', 'mps', 'tes', 'zes', 'ers', 'les', 'acks', 'ends', 'ands',
+				'ocks', 'lays', 'eads', 'lls', 'els', 'ils', 'ows', 'nds', 'ays', 'ams', 'ars', 'ops',
 				'ffs', 'als', 'urs', 'lds', 'ews', 'ips', 'es', 'ts', 'ns', 's'
 			]
 		}
 		//, end of suffixes english
 	},
-	
+
 	//: replace
 	// add rules to simplify tenses for conjugation
 	tenseReplace: {
@@ -887,23 +889,23 @@ verbs: {
 				matches: /^have [a-z]/i,
 				replaces: /^have /i,
 				replacer: ''
-			}		
+			}
 		},
 		futurePerfect: {
 			en: {
 				matches: /^will have [a-z]/i,
 				replaces: /^will have /i,
 				replacer: ''
-			}		
+			}
 		},
 		future: {
 			en: {
 				replaces: /^will /i,
 				replacer: ''
-			}		
+			}
 		}
 	},
-	
+
 	//: detectFallbacks
 	// fallbacks for detection of special tenses or forms
 	detectFallbacks: {
@@ -916,7 +918,7 @@ verbs: {
 			[/n't$/, 'negative']
 		]
 	},
-	
+
 	//: fallback
 	// function: fallback to this transformation if it has an unknown prefix ...
 	// get's a blank conjugated verb object, returns this object with plan b
@@ -944,7 +946,7 @@ verbs: {
 		}
 		//, end of english
 	},
-	
+
 	//: fulfill
 	// function: makes conjugation complete
 	// get's a conjugated verb object, returns fulfilled
@@ -961,7 +963,7 @@ verbs: {
 			};
 		}
 	},
-	
+
 	//: doer
 	// transforms for toDoer [matches, replaces]
 	doer: {
@@ -1017,7 +1019,7 @@ adjectives: {
 		// adjective to adverb function
 		fallback: {
 			en: function(word) {
-				return [word,'ly'].join('');	
+				return [word,'ly'].join('');
 			}
 		}
 	},
@@ -1055,13 +1057,13 @@ adjectives: {
 		},
 		fn: {
 			en: function(word) {
-				return [word,(word.match(/e$/) ? 'r' : 'er')].join('');	
+				return [word,(word.match(/e$/) ? 'r' : 'er')].join('');
 			}
 		},
 		// the fallback for the adjective to comparative
 		fallback: {
 			en: function(word) {
-				return ['more', word].join(' ');	
+				return ['more', word].join(' ');
 			}
 		}
 	},
@@ -1107,12 +1109,12 @@ adjectives: {
 		// the fallback for the adjective to superlative
 		fallback: {
 			en: function(word) {
-				return ['most', word].join(' ');	
+				return ['most', word].join(' ');
 			}
 		}
 	},
 	noun: {
-		// to noun transforms (replaces)	
+		// to noun transforms (replaces)
 		to: {
 			en: [
 				[/y$/, 'iness'],
@@ -1139,7 +1141,7 @@ adjectives: {
 		// adjective to noun function
 		fallback: {
 			en: function(word) {
-				return [word,'ness'].join('');	
+				return [word,'ness'].join('');
 			}
 		}
 	}
@@ -1180,7 +1182,7 @@ adverbs: {
 // -------------------------------------------------v
 numbers: {
 	negative: {en: /^(-|minus|negative)[\s\-]/i}, // TODO anchored
-	factors: {en: 
+	factors: {en:
 		[{
 			reg: /\b(a)?(one-)?(\s)?half([\s\-])?(of\s)?/i,
 			mult: 0.5
@@ -1260,7 +1262,7 @@ units: {
 		['plane angle'],
 		['solid angle'],
 		['energy','work','heat'],
-		['pressure','stress'], 
+		['pressure','stress'],
 		['power','radiant flux'],
 		['force'],
 		['magnetic flux'],
@@ -1344,7 +1346,7 @@ units: {
 			//						1.000.000.000.000.000 :
 			[15,'P','peta',50],
 			//								1.000.000.000.000 :
-			[12,'T','te[r]+a',40], 
+			[12,'T','te[r]+a',40],
 			//										1.000.000.000 :
 			[9, 'G','giga',30],
 			//												1.000.000 :
@@ -1471,10 +1473,10 @@ units: {
 		[['thermodynamic temperature by mass'],0,0,['kilogramm? kelvin','kilogramm? kelvin']],
 		[['length by thermodynamic temperature'],0,0,['meter kelvin','(?:meter|m[eè]tre) kelvin']],
 		[['electric conductance by area'],0,0,['siemens square meter','siemens (square ?|quadrat ?)?meter|m[eè]tre']]
-		
+
 		/* TODO
 			CONSTANTS:: m-1:wavenumber
-			----------+	
+			----------+
 			watt hours
 			currency/währung, loudness/lautheit, bandRate/tonheit, bpm, lat/lng
 			Richter
@@ -1485,13 +1487,13 @@ units: {
 			astronomical unit [AU]
 			Liga [lea]
 			Fermi [f]
-			Arpent 
+			Arpent
 			Twip
 			ALN
 			Kaliber
 			Ken
 			Reed
-			
+
 			Planck-Länge
 			http://physics.nist.gov/cuu/Units/outside.html +
 			GtCO2eq, MTU, toe, gilbert, bushel
@@ -1514,15 +1516,15 @@ units: {
 /!	49 	reciprocal metre							m−1					wavenumber, optical power, curvature, spatial frequency	m−1
 		*/
 	],
-	pows: { 
+	pows: {
 		// TODO http://physics.stackexchange.com/questions/11779/whats-the-range-of-dimension-exponents-in-the-si-units-system
-		// regexPrefix, regexSuffix 
+		// regexPrefix, regexSuffix
 		_2: ['square ','square|quadrat|centiare|centare|(?:s?q[. ]*)', '(?: carr[eé])|(?: squared?)|\\u00B2|2'],
 		_3: ['cubic ','[ck]ubi[ck]|(?:[ck]b[. ]*)', '(?: cubed?)|\\u00B3|3'],
 		_4: ['quartic ','quarti(?:c|que)|biquadratische?|q.', '(?: quarti(?:c|que))|\\u2074|4'],
 		length: [0,3,4,5] //-, length, area, volume
 	},
-	
+
 	by: {
 		_: "by|\\u22C5|\\u00B7|\\u00D7|\\u2715|\\*",
 		force: {
@@ -1620,17 +1622,17 @@ units: {
 			length: 70
 		},
 		'radioactivity absorbed dose': {
-			time: 74	
+			time: 74
 		}
 		/*
 		[0,0,0,['siemens square meter','siemens (square ?|quadrat ?)?meter|m[eè]tre']], //... per mol 67
 		*/
 	},
-	
+
 	currencies: { ALL:'L', AFN:'؋', ARS:'$', AWG:'ƒ', AUD:'$', AZN:'₼', BSD:'$', BBD:'$', BYR:'p.', BZD:'BZ$', BMD:'$', BOB:'Bs.', BAM:'KM', BWP:'P', BGN:'лв', BRL:'R$', BND:'$', KHR:'៛', CAD:'$', KYD:'$', CLP:'$', CNY:'¥', COP:'$', CRC:'₡', HRK:'kn', CUP:'₱', CZK:'Kč', DKK:'kr', DOP:'RD$', XCD:'$', EGP:'£', SVC:'$', EEK:'kr', EUR:'€', FKP:'£', FJD:'$', GHC:'¢', GIP:'£', GTQ:'Q', GGP:'£', GYD:'$', HNL:'L', HKD:'$', HUF:'Ft', ISK:'kr', INR:'₹', IDR:'Rp', IRR:'﷼', IMP:'£', ILS:'₪', JMD:'J$', JPY:'¥', JEP:'£', KES:'KSh', KZT:'лв', KPW:'₩', KRW:'₩', KGS:'лв', LAK:'₭', LVL:'Ls', LBP:'£', LRD:'$', LTL:'Lt', MKD:'ден', MYR:'RM', MUR:'₨', MXN:'$', MNT:'₮', MZN:'MT', NAD:'$', NPR:'₨', ANG:'ƒ', NZD:'$', NIO:'C$', NGN:'₦', NOK:'kr', OMR:'﷼', PKR:'₨', PAB:'B/.', PYG:'Gs', PEN:'S/.', PHP:'₱', PLN:'zł', QAR:'﷼', RON:'lei', RUB:'₽', SHP:'£', SAR:'﷼', RSD:'Дин.', SCR:'₨', SGD:'$', SBD:'$', SOS:'S', ZAR:'R', LKR:'₨', SEK:'kr', CHF:'Fr.', SRD:'$', SYP:'£', TZS:'TSh', TWD:'NT$', THB:'฿', TTD:'TT$', TRY:'', TRL:'₤', TVD:'$', UGX:'USh', UAH:'₴', GBP:'£', USD:'$', UYU:'$U', UZS:'лв', VEF:'Bs', VND:'₫', YER:'﷼', ZWD:'Z$'},
-	
+
 	cryptoCurrencies: {
-		
+
 	}
 },
 

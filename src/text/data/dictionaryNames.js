@@ -1,15 +1,17 @@
-// nlp_comprimise by @spencermountain  in 2014
 
-/* *********************************************************************************************************
-//	The main dictionary to build various language (or context) specific lexica -
-//  part 2 : named entities
-********************************************************************************************************* */
+/**
+ * redaktor/nlp by @redaktor foundation and the contributors in 2015<br>
+ * *********************************************************************************************************
+ *	The main dictionary to build various language (or context) specific lexica -
+ *  part 2 : named entities
+ * *********************************************************************************************************
+ */
 
 // see ./build.js for generating the lexica
 
-var main = { 
+var main = {
 	//an ad-hoc prefix encoding for names. 2ms decompression of names
-  male: { 
+  male: {
 		en: {
 			'will': 'iam,ie,ard,is,iams',
 			'fred': ',erick,die,rick,dy',

@@ -1,6 +1,5 @@
 // 18 phrasal verbs
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
 var dict = require('../dictionary'), zip;
 var opposite = require('./')('negate', lang, 1);
 var verbs = require('./')('verbs', lang, 1);

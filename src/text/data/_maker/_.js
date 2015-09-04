@@ -5,16 +5,16 @@
  * @readonly
  * @module data/_
  */
-var dict = require('./dictionary');
+var dict = require('../dictionary');
 var lang = 'en';
-var results = {main:[[]], zip:[[]]};
+exports.results = {main:[[]], zip:[[]]};
 
 function setLang(l) {
 	lang = l;
 	return lang;
 }
 function getRes(isZip) {
-	return (isZip) ? results.zip : results.main;
+	return (isZip) ? exports.results.zip : exports.results.main;
 }
 function allPossible() {
 	var _all = [];
@@ -30,8 +30,8 @@ function allPossible() {
 };
 // some helpers (only for _build)
 function newRes(isZip) {
-	var r = results[(isZip) ? 'zip' : 'main'];
-	if (r.length-1 > 0) results[(isZip) ? 'zip' : 'main'].push([]);
+	var r = exports.results[(isZip) ? 'zip' : 'main'];
+	if (r.length-1 > 0) exports.results[(isZip) ? 'zip' : 'main'].push([]);
 	return [];
 }
 function val(o, fb) {
@@ -41,17 +41,17 @@ function val(o, fb) {
 	return (typeof o === 'string') ? o : o[lang];
 }
 function did(s, isZip) {
-	var r = results[(isZip) ? 'zip' : 'main'];
+	var r = exports.results[(isZip) ? 'zip' : 'main'];
 	var a = r[r.length-1];
 	if (s instanceof Array) {
-		results[(isZip) ? 'zip' : 'main'][r.length-1] = a.concat(s);
+		exports.results[(isZip) ? 'zip' : 'main'][r.length-1] = a.concat(s);
 	} else {
-		results[(isZip) ? 'zip' : 'main'][r.length-1].push(s);
+		exports.results[(isZip) ? 'zip' : 'main'][r.length-1].push(s);
 	}
 	return s;
 }
 function handled(s, isZip) {
-	var r = results[(isZip) ? 'zip' : 'main'];
+	var r = exports.results[(isZip) ? 'zip' : 'main'];
 	var a = r[r.length-1];
 	return a.indexOf(s) > -1;
 }

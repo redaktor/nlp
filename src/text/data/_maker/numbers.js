@@ -1,5 +1,5 @@
 // 11 numbers
-var __ = require('../_');
+var __ = require('./_');
 var dict = require('../dictionary');
 module.exports = {
   id: 'numbers',

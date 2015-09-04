@@ -1,6 +1,6 @@
 // 17 firstnames
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
+var _ = require('../../../_');
 var dict = require('../dictionaryNames'), zip;
 module.exports = {
   id: 'firstnames',

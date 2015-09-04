@@ -62,10 +62,8 @@ function setMyPath(site){
 		console.log( '\033[90m  [\033[0m\033[32mfound the data path:\033[90m %s]\033[0m', PATH );
 	}
 }
-// nlp fns
-var _;
 // fns used only for _maker (functions and regexes in obj)
-var __ = require('./_');
+var __ = require('./_maker/_');
 // i18n Corpus Data:
 var dict = require('./dictionary');
 var possibleLanguages = {}; // changes to all languages in the dictionary
@@ -75,8 +73,6 @@ var data = {}, zip;
 // generate the DATA MODULES from dictionaries
 // /_makers order
 var maker = [
-	// schema TODO JSON Schema / Interface ...
-	'schema',
 	// sort out multiple words
 	'multiples',
 	// NOUN
@@ -186,8 +182,10 @@ function makeLanguageModule(key,i){
 		main: [jsDocs.join(''), g.prefix||'', C._],
 		zip: [g.prefix||'', C._]
 	};
+
 	var m = require('./_maker')(key,lang,1);
 	strings.main.push([C.zip,format(m),C.exp].join(''));
+	data[key] = m;
 	m = require('./_maker/'+key).zip(lang,1);
 	strings.zip.push([C.zip,format(m)].join(''));
 	if (g.hasOwnProperty('unzip')) {
@@ -213,11 +211,12 @@ function makeLanguageModule(key,i){
 	fs.writeFileSync( path.join(PATH, lang, folder, g.id.concat('.min.ts')), zipStr);
 	var colors = ['',''];
 	meta = (g.folder) ? [folder, g.id].join('') : g.id;
-	var nr = (i<10) ? '0'+i : i.toString();
-	console.log( 'wrote module file for language', '"'+lang+'" :', [colors[0],nr,' of ',maker.length,colors[1]].join(''), ['(', meta, ')'].join('') );
-	if (i === maker.length) {
-		require('./_maker/lexicon')(lang);
-		require('./_maker/lexicon')(lang, 1);
+	var nr = i+1;
+	var nrStr = (nr<10) ? '0'+nr : nr.toString();
+	console.log( 'wrote module file for language', '"'+lang+'" :', [colors[0],nrStr,' of ',maker.length,colors[1]].join(''), ['(', meta, ')'].join('') );
+	if (nr === maker.length) {
+		require('./_maker/lexicon')(PATH, maker, data, lang);
+		require('./_maker/lexicon')(PATH, maker, data, lang, 1);
 	}
 }
 // API

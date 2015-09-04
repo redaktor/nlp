@@ -1,6 +1,6 @@
 // 7 adjectives: decline
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
+var _ = require('../../../_');
 var dict = require('../dictionary'), zip;
 module.exports = {
   id: 'decline',

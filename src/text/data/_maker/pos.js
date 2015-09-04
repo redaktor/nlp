@@ -1,6 +1,6 @@
 // 15 pos
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
+var _ = require('../../../_');
 var allPossibles = __.allPossible();
 var dict = require('../dictionary'), zip;
 module.exports = {

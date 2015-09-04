@@ -1,6 +1,5 @@
 // 13 honorifics
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
 var dict = require('../dictionary');
 module.exports = {
   id: 'honorifics',
@@ -10,7 +9,7 @@ module.exports = {
   zip: function(lang, isZip) {
     __.newRes(isZip);
     if (!isZip) {
-      honorifics = __.did(dict.NNAB.words.filter(__.meta, {key: 'honour', isZip: isZip}).map(__.val), isZip);
+      honorifics = dict.NNAB.words.filter(__.meta, {key: 'honour', isZip: isZip}).map(__.val);
       return honorifics;
     }
     return __.did(dict.NNAB.words.filter(__.meta, {key: 'honour', isZip: isZip}).map(__.val), isZip);

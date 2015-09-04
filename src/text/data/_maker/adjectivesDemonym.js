@@ -1,6 +1,6 @@
 // 8 adjectives: demonyms
-var _ = require('../../nlp/_');
-var __ = require('../_');
+var __ = require('./_');
+var _ = require('../../../_');
 var dict = require('../dictionary');
 module.exports = {
   id: 'demonym',
