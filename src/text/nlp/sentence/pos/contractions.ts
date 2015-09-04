@@ -1,6 +1,6 @@
 //add a 'quiet' token for contractions so we can represent their grammar
 import Term = require("../../term/index");
-import Promise = require('../../../dojo/Promise');
+import Promise = require('../../../../dojo/Promise');
 /* // 2.0:
 let contractions = {
   "i'd": ["i", "would"],

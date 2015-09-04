@@ -1,7 +1,7 @@
 "use script";
-let fns = require("../fns.js");
+import _ = require("../_");
 //negate makes s sentence mean s opposite thing.
-let negate = function(s) {
+function negate(s) {
   //these are cheap ways to negate s meaning
   // ('none' is ambiguous because it could mean (all or some) )
   let logic_negate = {
@@ -48,7 +48,7 @@ let negate = function(s) {
       tok.text = logic_negate[tok.normalised]
       tok.normalised = logic_negate[tok.normalised]
       if (tok.capitalised) {
-        tok.text = fns.titlecase(tok.text)
+        tok.text = _.toTitlecase(tok.text)
       }
       return s
     }
@@ -67,7 +67,7 @@ let negate = function(s) {
         tok.text = tok.text.replace(/^will /i, "won't ")
         tok.normalised = tok.text
         if (tok.capitalised) {
-          tok.text = fns.titlecase(tok.text)
+          tok.text = _.toTitlecase(tok.text)
         }
         return s
       }
@@ -110,7 +110,7 @@ let negate = function(s) {
           tok.normalised = tok.normalised.replace(/^will /i, "won't ")
         }
         if (tok.capitalised) {
-          tok.text = fns.titlecase(tok.text);
+          tok.text = _.toTitlecase(tok.text);
         }
         return s
       }
@@ -122,4 +122,4 @@ let negate = function(s) {
   return s
 }
 
-module.exports = negate
+export = negate

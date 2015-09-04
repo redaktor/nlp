@@ -1,7 +1,7 @@
 //
 import Nlp = require('../../interfaces.d');
 import Term = require('../index')
-import load = require('../../data/load');
+import load = require('../../../i18n/load');
 
 class Adverb extends Term {
   options;
@@ -11,7 +11,7 @@ class Adverb extends Term {
   }
   toAdjective() {
     load(this.options.language, ['lexicon/abbreviations','lexicon/dates'], function(abbreviations, dates):string {
-      
+
       return '';
       //return to_adjective(this.normal);
     });

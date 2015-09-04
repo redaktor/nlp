@@ -1,7 +1,7 @@
 //(Rule-based sentence boundary segmentation) - chop given text into its proper sentences.
 // Ignore periods/questions/exclamations used in acronyms/abbreviations/numbers, etc.
 import Nlp = require('../interfaces.d');
-import load = require('../../data/load');
+import load = require('../../i18n/load');
 import Sentence = require('../sentence/index');
 import Promise = require('../../../dojo/Promise');
 

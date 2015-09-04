@@ -2,7 +2,7 @@
  * wrapper module for adjective's methods
  * @module src/parents/adjective/index
  */
- import loadData = require('../text/data/load');
+ import loadData = require('../../i18n/load');
 
 if (typeof lang != 'string') var lang = 'en';
 var dPath = '../data/'+lang+'/';

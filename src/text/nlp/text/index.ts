@@ -5,7 +5,7 @@
  */
 import _ = require('../_');
 import Nlp = require('../interfaces.d');
-import load = require('../../data/load');
+import load = require('../../i18n/load');
 import sentenceParser = require('./sentenceParser');
 import ngram = require('./ngram');
 // let's not block anything - we return promises :
@@ -22,7 +22,7 @@ class Text implements Nlp.IText {
   set<T>(str:string) : Promise<any> {
     function parseSentences(resolve:(sentences) => Nlp.IText) {
       load(this.options.language, ['index'], function(i18nData) : Nlp.IText {
-        
+
         function finish(mySentences:string[]) {
           this.sentences = mySentences;
           return resolve(this);
