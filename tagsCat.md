@@ -37,7 +37,7 @@
 | CD   | cardinal number                           | five, three, 13%           |
 | CDV  | cardinal value <br>(with unit of measurement or currency) | 220 km/h, 11€ |
 | DA   | date                                      | june 5th, 1998             |
-|```other```|||
+|```Other```|||
 | LS   | list item marker                          |                            |
 | SYM  | symbol                                    | %                          |
 | .    | punctuation mark, sentence closer         | .;?*                       |
