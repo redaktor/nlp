@@ -17,7 +17,7 @@ zip = { which:
         [ /l$/i, 'ly' ] ],
      no: [ /airs$/, /ll$/, /ee.$/, /ile$/ ],
      fallback: function (word) {
-				return [word,'ly'].join('');	
+				return [word,'ly'].join('');
 			} },
   comparative: 
    { to: 
@@ -27,7 +27,7 @@ zip = { which:
         [ /nge$/i, 'nger' ] ],
      no: [ /ary$/, /ous$/ ],
      fn: function (word) {
-				return [word,(word.match(/e$/) ? 'r' : 'er')].join('');	
+				return [word,(word.match(/e$/) ? 'r' : 'er')].join('');
 			},
      regular: 
       [ /ght$/,
@@ -41,7 +41,7 @@ zip = { which:
         /oud$/,
         /e[ae]p$/ ],
      fallback: function (word) {
-				return ['more', word].join(' ');	
+				return ['more', word].join(' ');
 			} },
   superlative: 
    { to: 
@@ -68,7 +68,7 @@ zip = { which:
         /oud$/,
         /...p$/ ],
      fallback: function (word) {
-				return ['most', word].join(' ');	
+				return ['most', word].join(' ');
 			} },
   noun: 
    { to: 
@@ -85,7 +85,7 @@ zip = { which:
         [ /ous$/, 'ousness' ] ],
      no: [ /\s$/, /w$/, /s$/ ],
      fallback: function (word) {
-				return [word,'ness'].join('');	
+				return [word,'ness'].join('');
 			} } }
 
 export = (function () {

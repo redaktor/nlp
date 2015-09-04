@@ -1,0 +1,33 @@
+define(["require", "exports", './lexicon/multiples', './nouns/inflect', './nouns/index', './verbs/special', './verbs/conjugate', './verbs/index', './adjectives/decline', './adjectives/demonym', './adjectives/index', './adverbs/decline', './lexicon/numbers', './lexicon/dates', './lexicon/honorifics', './lexicon/abbreviations', './lexicon/pos', './lexicon/negate', './lexicon/firstnames', './lexicon/phrasalVerbs', './rules/normalisations', './rules/wordnet', './rules/pos', './rules/sentence', './rules/verb', './rules/noun', './rules/adjective', './rules/adverb', './rules/number', './rules/units', './rules/date'], function (require, exports, multiples, nounsInflect, nouns, verbsSpecial, verbsConjugate, verbs, adjectivesDecline, adjectivesDemonym, adjectives, adverbsDecline, numbers, dates, honorifics, abbreviations, pos, negate, firstnames, phrasalVerbs, rulesNormalisations, rulesWordnet, rulesPos, rulesSentence, rulesVerb, rulesNoun, rulesAdjective, rulesAdverb, rulesNumber, rulesUnits, rulesDate) {
+    return {
+        multiples: multiples,
+        nounsInflect: nounsInflect,
+        nouns: nouns,
+        verbsSpecial: verbsSpecial,
+        verbsConjugate: verbsConjugate,
+        verbs: verbs,
+        adjectivesDecline: adjectivesDecline,
+        adjectivesDemonym: adjectivesDemonym,
+        adjectives: adjectives,
+        adverbsDecline: adverbsDecline,
+        numbers: numbers,
+        dates: dates,
+        honorifics: honorifics,
+        abbreviations: abbreviations,
+        pos: pos,
+        negate: negate,
+        firstnames: firstnames,
+        phrasalVerbs: phrasalVerbs,
+        rulesNormalisations: rulesNormalisations,
+        rulesWordnet: rulesWordnet,
+        rulesPos: rulesPos,
+        rulesSentence: rulesSentence,
+        rulesVerb: rulesVerb,
+        rulesNoun: rulesNoun,
+        rulesAdjective: rulesAdjective,
+        rulesAdverb: rulesAdverb,
+        rulesNumber: rulesNumber,
+        rulesUnits: rulesUnits,
+        rulesDate: rulesDate
+    };
+});

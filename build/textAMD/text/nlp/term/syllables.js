@@ -1,11 +1,15 @@
-//chop a string into pronounced syllables
+/**
+ * chop a string into pronounced syllables
+ * @module term/syllables
+ */
+// TODO i18n
+// resources for all languages by Mathias: 
+// https://github.com/mnater/Hyphenator/tree/master/patterns
 define(["require", "exports"], function (require, exports) {
     //suffix fixes
     function postprocess(arr) {
         //trim whitespace
-        arr = arr.map(function (w) {
-            return w.trim();
-        });
+        arr = arr.map(function (w) { return w.trim(); });
         if (arr.length > 2) {
             return arr;
         }
@@ -26,8 +30,9 @@ define(["require", "exports"], function (require, exports) {
         }
         return arr;
     }
-    var getSyllables = function (str) {
+    var syllables = function (str) {
         var all = [];
+        //method is nested because it's called recursively
         var doer = function (w) {
             var vow = /[aeiouy]$/;
             var chars = w.split('');
@@ -39,7 +44,6 @@ define(["require", "exports"], function (require, exports) {
                 current = chars[i];
                 after = chars.slice(i + 1, chars.length).join('');
                 var candidate = before + chars[i];
-                //rules for syllables-
                 //it's a consonant that comes after a vowel
                 if (before.match(vow) && !current.match(vow)) {
                     if (after.match(/^e[sm]/)) {
@@ -53,7 +57,7 @@ define(["require", "exports"], function (require, exports) {
                 if (candidate.match(/(eo|eu|ia|oa|ua|ui)$/i)) {
                     all.push(before);
                     all.push(current);
-                    return doer(after);
+                    return doer(after); //recursion
                 }
             }
             //if still running, end last syllable
@@ -74,9 +78,9 @@ define(["require", "exports"], function (require, exports) {
         }
         //filter blanks
         all = all.filter(function (s) {
-            return s != "";
+            return s !== "" && s !== null && s !== undefined;
         });
         return all;
     };
-    return getSyllables;
+    return syllables;
 });

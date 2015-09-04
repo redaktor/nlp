@@ -305,16 +305,20 @@ export = (function () {
     var _nr:any[] = Object.keys(data.multiple).concat(Object.keys(data.tens),Object.keys(data.teens),Object.keys(data.ones));
     zip.numOnly = new RegExp(['(',_nr.join('|'),')',end].join(''), 'gi');
     var nr = ['((?:(?:',_nr.concat(data.plus,data.minus,data.factors,data.decimal,'\\d+').join('|'),')(?: ?))+)'].join('');
+
     var p = { w:prefix('w'), s:prefix('s'), S: [], W: [] };
     p.W = [{matches: new RegExp(['(',p.w.join(')|('),')'].join(''), 'i')}];
     p.S = [{matches: new RegExp(['(',p.s.join(')|('),')'].join(''), '')}];
-    zip.prefix = _.mixin(p, {fn:{w:_.tokenFn(p, 'W', 1, 1), s:_.tokenFn(p, 'S', 1, 1)}});
+    p.fn = {w:_.tokenFn(p, 'W', 1, 1), s:_.tokenFn(p, 'S', 1, 1)}
+    zip.prefix = p;
 
     var u = { w:getUnit('w'), s:getUnit('s'), S: [], W: [] };
     u.W = [{matches: new RegExp(['(',u.w.join(')|('),')'].join(''), 'i')}];
     u.S = [{matches: new RegExp(['(',u.s.join(')|('),')'].join(''), '')}];
+    u.fn = {w:_.tokenFn(u, 'W', 1, 1), s:_.tokenFn(u, 'S', 1, 1)};
     zip.units = _u;
-    zip.unit = _.mixin(u, {fn:{w:_.tokenFn(u, 'W', 1, 1), s:_.tokenFn(u, 'S', 1, 1)}});
+    zip.unit = u;
+
     var pStr = ['(?:(',p.w.join('|'),')|(?:(',p.s.join('|'),')(?=(?:',u.s.join('|'),')(?:',zip.by._,'|',zip.per._,'|\\b|$))))?'].join('');
     var uStr = ['(',u.w.join('|'),')?(?: |$)?(',u.s.join('|'),')?'].join('');
 

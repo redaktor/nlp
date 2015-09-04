@@ -2,7 +2,8 @@ import honorifics = require('./honorifics');
 
 declare var zip:any;
 zip = { nouns: 
-   [ 'ave',
+   [ 'jr',
+     'ave',
      'blvd',
      'uss',
      'ss',
