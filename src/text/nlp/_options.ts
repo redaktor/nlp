@@ -10,8 +10,10 @@
 
 // TODO - jsDOC
 export = {
+	language: 'en',
+	languageDetection: false,
 	cache: {
-		size: 256,
+		size: 128,
 		db: false
 	},
 	pos: {
