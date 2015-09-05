@@ -3,7 +3,7 @@ declare var adj:I18n.IFingerprint;
 adj = { rank: -1,
   iso: 'adj',
   name: 'Adioukrou',
-  trigrams: 
+  trigrams:
    { 'ke ': 0,
      ' ek': 1,
      ' a ': 2,
@@ -140,7 +140,7 @@ adj = { rank: -1,
      'a. ': 133,
      'ci ': 134,
      'i b': 135,
-     ': \': 136,
+     ': \\': 136,
      nin: 137,
      'r ɛ': 138,
      'e m': 139,

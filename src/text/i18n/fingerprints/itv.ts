@@ -3,7 +3,7 @@ declare var itv:I18n.IFingerprint;
 itv = { rank: -1,
   iso: 'itv',
   name: 'Itawit',
-  trigrams: 
+  trigrams:
    { 'an ': 0,
      ' ka': 1,
      nga: 2,
@@ -166,7 +166,7 @@ itv = { rank: -1,
      '. n': 159,
      add: 160,
      'a s': 161,
-     ', \': 162,
+     ', \\': 162,
      'a b': 163,
      'tu ': 164,
      ' ba': 165,

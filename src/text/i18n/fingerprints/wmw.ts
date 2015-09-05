@@ -3,7 +3,7 @@ declare var wmw:I18n.IFingerprint;
 wmw = { rank: -1,
   iso: 'wmw',
   name: 'Mwani',
-  trigrams: 
+  trigrams:
    { ' wa': 0,
      'wa ': 1,
      'na ': 2,
@@ -114,7 +114,7 @@ wmw = { rank: -1,
      moj: 107,
      oja: 108,
      kat: 109,
-     ': \': 110,
+     ': \\': 110,
      ' vi': 111,
      kin: 112,
      ', k': 113,

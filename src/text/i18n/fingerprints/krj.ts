@@ -3,7 +3,7 @@ declare var krj:I18n.IFingerprint;
 krj = { rank: -1,
   iso: 'krj',
   name: 'Kinaray-a',
-  trigrams: 
+  trigrams:
    { ' ka': 0,
      ang: 1,
      'ng ': 2,
@@ -174,7 +174,7 @@ krj = { rank: -1,
      'i k': 167,
      mat: 168,
      agt: 169,
-     ', \': 170,
+     ', \\': 170,
      'n m': 171,
      sus: 172,
      'd k': 173,

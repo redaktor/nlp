@@ -3,7 +3,7 @@ declare var bss:I18n.IFingerprint;
 bss = { rank: -1,
   iso: 'bss',
   name: 'Akoose',
-  trigrams: 
+  trigrams:
    { ' bé': 0,
      'ne ': 1,
      ' ny': 2,
@@ -123,7 +123,7 @@ bss = { rank: -1,
      'nlé': 116,
      '́, ': 117,
      'e é': 118,
-     ', \': 119,
+     ', \\': 119,
      'ɛn ': 120,
      ' nd': 121,
      'ébɛ': 122,

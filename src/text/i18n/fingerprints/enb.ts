@@ -3,7 +3,7 @@ declare var enb:I18n.IFingerprint;
 enb = { rank: -1,
   iso: 'enb',
   name: 'Marakwet',
-  trigrams: 
+  trigrams:
    { ' ki': 0,
      ' ku': 1,
      'oo ': 2,
@@ -124,7 +124,7 @@ enb = { rank: -1,
      ooy: 117,
      'a k': 118,
      aay: 119,
-     ', \': 120,
+     ', \\': 120,
      'lē,': 121,
      iir: 122,
      kun: 123,

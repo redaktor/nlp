@@ -3,7 +3,7 @@ declare var bps:I18n.IFingerprint;
 bps = { rank: -1,
   iso: 'bps',
   name: 'Sarangani Blaan',
-  trigrams: 
+  trigrams:
    { ' di': 0,
      ' i ': 1,
      'di ': 2,
@@ -132,7 +132,7 @@ bps = { rank: -1,
      'al ': 125,
      'u k': 126,
      'o d': 127,
-     ', \': 128,
+     ', \\': 128,
      awa: 129,
      bal: 130,
      'o m': 131,

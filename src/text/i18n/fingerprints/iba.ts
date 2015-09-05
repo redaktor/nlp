@@ -3,7 +3,7 @@ declare var iba:I18n.IFingerprint;
 iba = { rank: -1,
   iso: 'iba',
   name: 'Iban',
-  trigrams: 
+  trigrams:
    { 'ai ': 0,
      'ka ': 1,
      ang: 2,
@@ -166,7 +166,7 @@ iba = { rank: -1,
      'ma ': 159,
      bej: 160,
      'ak ': 161,
-     ', \': 162,
+     ', \\': 162,
      'u a': 163,
      'u d': 164,
      ' ku': 165,

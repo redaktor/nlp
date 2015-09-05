@@ -3,7 +3,7 @@ declare var msm:I18n.IFingerprint;
 msm = { rank: -1,
   iso: 'msm',
   name: 'Manobo, Agusan',
-  trigrams: 
+  trigrams:
    { 'to ': 0,
      ' to': 1,
      ' no': 2,
@@ -158,7 +158,7 @@ msm = { rank: -1,
      '\" ': 151,
      kal: 152,
      god: 153,
-     ', \': 154,
+     ', \\': 154,
      'ig-': 155,
      'ku ': 156,
      'an.': 157,

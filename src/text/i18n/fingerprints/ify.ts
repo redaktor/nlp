@@ -3,7 +3,7 @@ declare var ify:I18n.IFingerprint;
 ify = { rank: -1,
   iso: 'ify',
   name: 'Antipolo Ifugao',
-  trigrams: 
+  trigrams:
    { 'an ': 0,
      ' ni': 1,
      'ni ': 2,
@@ -174,7 +174,7 @@ ify = { rank: -1,
      ' em': 167,
      yad: 168,
      ant: 169,
-     'y \': 170,
+     'y \\': 170,
      'i m': 171,
      ung: 172,
      ' pi': 173,

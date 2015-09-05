@@ -3,7 +3,7 @@ declare var nyf:I18n.IFingerprint;
 nyf = { rank: -1,
   iso: 'nyf',
   name: 'Giryama',
-  trigrams: 
+  trigrams:
    { 'na ': 0,
      'a k': 1,
      ' ma': 2,
@@ -140,7 +140,7 @@ nyf = { rank: -1,
      'si ': 133,
      osi: 134,
      ' si': 135,
-     ', \': 136,
+     ', \\': 136,
      'ai ': 137,
      eng: 138,
      ' we': 139,

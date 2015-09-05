@@ -3,7 +3,7 @@ declare var pww:I18n.IFingerprint;
 pww = { rank: -1,
   iso: 'pww',
   name: 'Karen Pwo, Northern',
-  trigrams: 
+  trigrams:
    { '   ': 0,
      ' อ ': 1,
      '้ง ': 2,
@@ -196,7 +196,7 @@ pww = { rank: -1,
      'โล้': 189,
      '้ ท': 190,
      'ะ. ': 191,
-     '  \': 192,
+     '  \\': 192,
      'ีง ': 193,
      'ง  ': 194,
      'ไท้': 195,

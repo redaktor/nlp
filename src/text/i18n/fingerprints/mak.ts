@@ -3,7 +3,7 @@ declare var mak:I18n.IFingerprint;
 mak = { rank: -1,
   iso: 'mak',
   name: 'Makassar',
-  trigrams: 
+  trigrams:
    { ang: 0,
      'na ': 1,
      'ri ': 2,
@@ -194,7 +194,7 @@ mak = { rank: -1,
      'ua ': 187,
      ean: 188,
      'u a': 189,
-     ', \': 190,
+     ', \\': 190,
      'ia\'': 191,
      eka: 192,
      'ne ': 193,

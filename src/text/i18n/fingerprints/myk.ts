@@ -3,7 +3,7 @@ declare var myk:I18n.IFingerprint;
 myk = { rank: -1,
   iso: 'myk',
   name: 'Miniyanka',
-  trigrams: 
+  trigrams:
    { ' na': 0,
      'na ': 1,
      ' ni': 2,
@@ -179,7 +179,7 @@ myk = { rank: -1,
      'i d': 172,
      'fɛɛ': 173,
      yii: 174,
-     ': \': 175,
+     ': \\': 175,
      'ge ': 176,
      'w`e': 177,
      'e b': 178,

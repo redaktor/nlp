@@ -3,7 +3,7 @@ declare var blh:I18n.IFingerprint;
 blh = { rank: -1,
   iso: 'blh',
   name: 'Belleh',
-  trigrams: 
+  trigrams:
    { ' wɔ': 0,
      'ɔ̀ ': 1,
      'ɛ̀ ': 2,
@@ -152,7 +152,7 @@ blh = { rank: -1,
      bul: 145,
      'gbà': 146,
      'ɔnɔ': 147,
-     ', \': 148,
+     ', \\': 148,
      'mùn': 149,
      'n n': 150,
      '́ n': 151,

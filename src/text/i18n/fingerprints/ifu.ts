@@ -3,7 +3,7 @@ declare var ifu:I18n.IFingerprint;
 ifu = { rank: -1,
   iso: 'ifu',
   name: 'Mayoyao Ifugao',
-  trigrams: 
+  trigrams:
    { 'an ': 0,
      ' an': 1,
      ' ch': 2,
@@ -166,7 +166,7 @@ ifu = { rank: -1,
      's a': 159,
      ton: 160,
      'a p': 161,
-     ', \': 162,
+     ', \\': 162,
      hon: 163,
      huy: 164,
      ati: 165,

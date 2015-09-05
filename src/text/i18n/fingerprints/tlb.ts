@@ -3,7 +3,7 @@ declare var tlb:I18n.IFingerprint;
 tlb = { rank: -1,
   iso: 'tlb',
   name: 'Tobelo',
-  trigrams: 
+  trigrams:
    { ang: 0,
      ' ma': 1,
      ' o ': 2,
@@ -190,7 +190,7 @@ tlb = { rank: -1,
      tem: 183,
      ati: 184,
      'oi ': 185,
-     ', \': 186,
+     ', \\': 186,
      ' du': 187,
      'u o': 188,
      'a k': 189,

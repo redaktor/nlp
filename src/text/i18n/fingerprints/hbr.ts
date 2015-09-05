@@ -3,7 +3,7 @@ declare var hbr:I18n.IFingerprint;
 hbr = { rank: -1,
   iso: 'hbr',
   name: 'Hebrew',
-  trigrams: 
+  trigrams:
    { 'ִים': 0,
      ' הַ': 1,
      ' בּ': 2,
@@ -93,7 +93,7 @@ hbr = { rank: -1,
      'וְה': 86,
      'ַר ': 87,
      'ָשׁ': 88,
-     ': \': 89,
+     ': \\': 89,
      ' לִ': 90,
      'עַל': 91,
      'אָמ': 92,

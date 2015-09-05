@@ -3,7 +3,7 @@ declare var mtj:I18n.IFingerprint;
 mtj = { rank: -1,
   iso: 'mtj',
   name: 'Moskona',
-  trigrams: 
+  trigrams:
    { ' no': 0,
      ' er': 1,
      'ga ': 2,
@@ -212,7 +212,7 @@ mtj = { rank: -1,
      kef: 205,
      '\" ': 206,
      'ur ': 207,
-     ', \': 208,
+     ', \\': 208,
      'eu ': 209,
      ' ok': 210,
      ' ow': 211,

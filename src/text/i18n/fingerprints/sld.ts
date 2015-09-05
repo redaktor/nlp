@@ -3,7 +3,7 @@ declare var sld:I18n.IFingerprint;
 sld = { rank: -1,
   iso: 'sld',
   name: 'Sissala',
-  trigrams: 
+  trigrams:
    { 'á ': 0,
      'ɛ́ ': 1,
      ' wɩ': 2,
@@ -120,7 +120,7 @@ sld = { rank: -1,
      'í,': 113,
      'ɩɛ́': 114,
      '\" ': 115,
-     ': \': 116,
+     ': \\': 116,
      'á,': 117,
      'a s': 118,
      'rí': 119,

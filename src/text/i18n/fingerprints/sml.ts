@@ -3,7 +3,7 @@ declare var sml:I18n.IFingerprint;
 sml = { rank: -1,
   iso: 'sml',
   name: 'Sinama',
-  trigrams: 
+  trigrams:
    { ' ma': 0,
      'an ': 1,
      ' ka': 2,
@@ -161,7 +161,7 @@ sml = { rank: -1,
      ' al': 154,
      pal: 155,
      ' mb': 156,
-     ', \': 157,
+     ', \\': 157,
      'm a': 158,
      ami: 159,
      'i k': 160,

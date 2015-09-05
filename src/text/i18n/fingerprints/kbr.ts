@@ -3,7 +3,7 @@ declare var kbr:I18n.IFingerprint;
 kbr = { rank: -1,
   iso: 'kbr',
   name: 'Kafa',
-  trigrams: 
+  trigrams:
    { oon: 0,
      'ee ': 1,
      ich: 2,
@@ -288,7 +288,7 @@ kbr = { rank: -1,
      ggo: 281,
      bic: 282,
      xoo: 283,
-     'ne\': 284,
+     'ne\\': 284,
      woc: 285,
      'e k': 286,
      baa: 287,

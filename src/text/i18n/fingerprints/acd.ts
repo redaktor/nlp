@@ -3,7 +3,7 @@ declare var acd:I18n.IFingerprint;
 acd = { rank: -1,
   iso: 'acd',
   name: 'Gikyode',
-  trigrams: 
+  trigrams:
    { ' mɔ': 0,
      'mɔ ': 1,
      'aa ': 2,
@@ -209,7 +209,7 @@ acd = { rank: -1,
      'elɛ': 202,
      'fɛɛ': 203,
      '. n': 204,
-     ', \': 205,
+     ', \\': 205,
      'i l': 206,
      'fɛ\'': 207,
      'ɛwu': 208,

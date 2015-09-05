@@ -3,7 +3,7 @@ declare var mfh:I18n.IFingerprint;
 mfh = { rank: -1,
   iso: 'mfh',
   name: 'Matal',
-  trigrams: 
+  trigrams:
    { 'la ': 0,
      'a a': 1,
      ' à ': 2,
@@ -171,7 +171,7 @@ mfh = { rank: -1,
      'aw,': 164,
      'ba ': 165,
      'y, ': 166,
-     ': \': 167,
+     ': \\': 167,
      'u a': 168,
      mat: 169,
      ani: 170,

@@ -3,7 +3,7 @@ declare var las:I18n.IFingerprint;
 las = { rank: -1,
   iso: 'las',
   name: 'Lamba for Togo',
-  trigrams: 
+  trigrams:
    { ' na': 0,
      'te ': 1,
      'a, ': 2,
@@ -138,7 +138,7 @@ las = { rank: -1,
      '-wa': 131,
      '\" ': 132,
      'r n': 133,
-     ': \': 134,
+     ': \\': 134,
      '\'ɩɩ': 135,
      ' ya': 136,
      '-ɔ ': 137,

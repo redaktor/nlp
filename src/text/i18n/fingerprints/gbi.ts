@@ -3,7 +3,7 @@ declare var gbi:I18n.IFingerprint;
 gbi = { rank: -1,
   iso: 'gbi',
   name: 'Galela',
-  trigrams: 
+  trigrams:
    { ' o ': 0,
      ' ma': 1,
      'na ': 2,
@@ -211,7 +211,7 @@ gbi = { rank: -1,
      'bu ': 204,
      uru: 205,
      ica: 206,
-     ', \': 207,
+     ', \\': 207,
      ' ye': 208,
      ' ba': 209,
      ras: 210,

@@ -1,9 +1,9 @@
 import I18n = require('../interfaces.d');
 declare var _cmn:I18n.IFingerprint;
 _cmn = { rank: -1,
-  iso: '_cmn',
+  iso: '_cmn_',
   name: 'Chinese, Mandarin (Pinyin)',
-  trigrams: 
+  trigrams:
    { 'ng ': 0,
      ' sh': 107,
      ' , ': 2,

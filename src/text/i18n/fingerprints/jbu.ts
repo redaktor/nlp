@@ -3,7 +3,7 @@ declare var jbu:I18n.IFingerprint;
 jbu = { rank: -1,
   iso: 'jbu',
   name: 'Jukun',
-  trigrams: 
+  trigrams:
    { ' wa': 0,
      ' ba': 1,
      ' ci': 2,
@@ -173,7 +173,7 @@ jbu = { rank: -1,
      'a h': 166,
      ' ni': 167,
      abe: 168,
-     ', \': 169,
+     ', \\': 169,
      'i p': 170,
      'e d': 171,
      'e n': 172,

@@ -3,7 +3,7 @@ declare var btx:I18n.IFingerprint;
 btx = { rank: -1,
   iso: 'btx',
   name: 'Batak Karo',
-  trigrams: 
+  trigrams:
    { ' si': 0,
      'si ': 1,
      'na ': 2,
@@ -152,7 +152,7 @@ btx = { rank: -1,
      ter: 145,
      era: 146,
      tan: 147,
-     ', \': 148,
+     ', \\': 148,
      ber: 149,
      'a p': 150,
      ' tu': 151,

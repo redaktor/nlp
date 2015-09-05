@@ -3,7 +3,7 @@ declare var nnw:I18n.IFingerprint;
 nnw = { rank: -1,
   iso: 'nnw',
   name: 'Nuni, Southern',
-  trigrams: 
+  trigrams:
    { ' nə': 0,
      ' tə': 1,
      'nə ': 2,
@@ -143,7 +143,7 @@ nnw = { rank: -1,
      ' \"': 136,
      'ə l': 137,
      'wɑ.': 138,
-     ': \': 139,
+     ': \\': 139,
      'ə s': 140,
      'ɑ k': 141,
      'ʋ d': 142,

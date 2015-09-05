@@ -3,7 +3,7 @@ declare var boj:I18n.IFingerprint;
 boj = { rank: -1,
   iso: 'boj',
   name: 'Anjam',
-  trigrams: 
+  trigrams:
    { 'qa ': 0,
      ' na': 1,
      'gi ': 2,
@@ -156,7 +156,7 @@ boj = { rank: -1,
      '\" ': 149,
      'si ': 150,
      'iq ': 151,
-     ', \': 152,
+     ', \\': 152,
      'a e': 153,
      ' uý': 154,
      umb: 155,

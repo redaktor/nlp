@@ -3,7 +3,7 @@ declare var mog:I18n.IFingerprint;
 mog = { rank: -1,
   iso: 'mog',
   name: 'Mongondow',
-  trigrams: 
+  trigrams:
    { ' in': 0,
      ' ko': 1,
      ' mo': 2,
@@ -194,7 +194,7 @@ mog = { rank: -1,
      '\'au': 187,
      nob: 188,
      mot: 189,
-     ', \': 190,
+     ', \\': 190,
      and: 191,
      mok: 192,
      umu: 193,

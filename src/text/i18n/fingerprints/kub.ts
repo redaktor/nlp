@@ -3,7 +3,7 @@ declare var kub:I18n.IFingerprint;
 kub = { rank: -1,
   iso: 'kub',
   name: 'Kutep',
-  trigrams: 
+  trigrams:
    { 'tī ': 0,
      ' tī': 1,
      'wū ': 2,
@@ -163,7 +163,7 @@ kub = { rank: -1,
      'e a': 156,
      'atá': 157,
      'kī ': 158,
-     ', \': 159,
+     ', \\': 159,
      '. i': 160,
      'tīt': 161,
      'yé ': 162,

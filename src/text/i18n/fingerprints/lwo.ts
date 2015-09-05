@@ -3,7 +3,7 @@ declare var lwo:I18n.IFingerprint;
 lwo = { rank: -1,
   iso: 'lwo',
   name: 'Luwo',
-  trigrams: 
+  trigrams:
    { ' ke': 0,
      'aa ': 1,
      ' ge': 2,
@@ -192,7 +192,7 @@ lwo = { rank: -1,
      wee: 185,
      'wa ': 186,
      'e, ': 187,
-     ', \': 188,
+     ', \\': 188,
      '. a': 189,
      'r g': 190,
      haa: 191,

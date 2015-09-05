@@ -3,7 +3,7 @@ declare var kwf:I18n.IFingerprint;
 kwf = { rank: -1,
   iso: 'kwf',
   name: 'Kwara\'ae',
-  trigrams: 
+  trigrams:
    { 'na ': 0,
      'a n': 1,
      'a k': 2,
@@ -190,7 +190,7 @@ kwf = { rank: -1,
      'a\'e': 183,
      eka: 184,
      aen: 185,
-     ', \': 186,
+     ', \\': 186,
      'ki.': 187,
      lek: 188,
      'le\'': 189,

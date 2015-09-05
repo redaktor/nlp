@@ -3,7 +3,7 @@ declare var twu:I18n.IFingerprint;
 twu = { rank: -1,
   iso: 'twu',
   name: 'Rote',
-  trigrams: 
+  trigrams:
    { ' na': 0,
      ' ma': 1,
      ala: 2,
@@ -184,7 +184,7 @@ twu = { rank: -1,
      'i f': 177,
      'fa\'': 178,
      soo: 179,
-     ', \': 180,
+     ', \\': 180,
      'k f': 181,
      'da\'': 182,
      'o l': 183,

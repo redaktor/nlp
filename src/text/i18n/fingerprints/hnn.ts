@@ -3,7 +3,7 @@ declare var hnn:I18n.IFingerprint;
 hnn = { rank: -1,
   iso: 'hnn',
   name: 'Hanunoo',
-  trigrams: 
+  trigrams:
    { ' ka': 0,
      ' ma': 1,
      'an ': 2,
@@ -167,7 +167,7 @@ hnn = { rank: -1,
      sid: 160,
      ngg: 161,
      pin: 162,
-     ', \': 163,
+     ', \\': 163,
      'i t': 164,
      'a. ': 165,
      '\" ': 166,

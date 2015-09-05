@@ -3,7 +3,7 @@ declare var taq:I18n.IFingerprint;
 taq = { rank: -1,
   iso: 'taq',
   name: 'Tamasheq',
-  trigrams: 
+  trigrams:
    { 'ăn ': 0,
      'dăɣ': 1,
      ' n-': 2,
@@ -110,7 +110,7 @@ taq = { rank: -1,
      ddi: 103,
      ', t': 104,
      'awă': 105,
-     ': \': 106,
+     ': \\': 106,
      'ăll': 107,
      'ĕss': 108,
      '\" ': 109,

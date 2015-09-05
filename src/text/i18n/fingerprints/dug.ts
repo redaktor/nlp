@@ -3,7 +3,7 @@ declare var dug:I18n.IFingerprint;
 dug = { rank: -1,
   iso: 'dug',
   name: 'Duruma',
-  trigrams: 
+  trigrams:
    { 'na ': 0,
      ' mu': 1,
      ' na': 2,
@@ -153,7 +153,7 @@ dug = { rank: -1,
      ina: 146,
      mbi: 147,
      'i. ': 148,
-     ', \': 149,
+     ', \\': 149,
      'a j': 150,
      cha: 151,
      'ba ': 152,

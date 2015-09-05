@@ -3,7 +3,7 @@ declare var agn:I18n.IFingerprint;
 agn = { rank: -1,
   iso: 'agn',
   name: 'Agutaynen',
-  trigrams: 
+  trigrams:
    { 'ng ': 0,
      ang: 1,
      ' ta': 2,
@@ -169,7 +169,7 @@ agn = { rank: -1,
      'da ': 162,
      'n. ': 163,
      '. p': 164,
-     ', \': 165,
+     ', \\': 165,
      ini: 166,
      'o. ': 167,
      'y a': 168,

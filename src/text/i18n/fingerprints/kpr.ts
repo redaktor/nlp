@@ -3,7 +3,7 @@ declare var kpr:I18n.IFingerprint;
 kpr = { rank: -1,
   iso: 'kpr',
   name: 'Korafe',
-  trigrams: 
+  trigrams:
    { 'da ': 0,
      'a a': 1,
      nda: 2,
@@ -236,7 +236,7 @@ kpr = { rank: -1,
      ido: 229,
      ana: 230,
      ', i': 231,
-     ', \': 232,
+     ', \\': 232,
      udo: 233,
      sen: 234,
      'i n': 235,

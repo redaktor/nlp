@@ -3,7 +3,7 @@ declare var xrb:I18n.IFingerprint;
 xrb = { rank: -1,
   iso: 'xrb',
   name: 'Karaboro',
-  trigrams: 
+  trigrams:
    { ' ye': 0,
      ' na': 1,
      ' ma': 2,
@@ -176,7 +176,7 @@ xrb = { rank: -1,
      'ã, ': 169,
      '\" ': 170,
      ', w': 171,
-     ': \': 172,
+     ': \\': 172,
      'i k': 173,
      'n t': 174,
      'ra ': 175,

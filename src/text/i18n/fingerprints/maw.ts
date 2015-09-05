@@ -3,7 +3,7 @@ declare var maw:I18n.IFingerprint;
 maw = { rank: -1,
   iso: 'maw',
   name: 'Mampruli',
-  trigrams: 
+  trigrams:
    { 'aa ': 0,
      ' ni': 1,
      ' ka': 2,
@@ -159,7 +159,7 @@ maw = { rank: -1,
      'u, ': 152,
      'u m': 153,
      lim: 154,
-     ', \': 155,
+     ', \\': 155,
      paa: 156,
      lal: 157,
      ' sↄ': 158,

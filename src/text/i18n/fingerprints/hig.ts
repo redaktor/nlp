@@ -3,7 +3,7 @@ declare var hig:I18n.IFingerprint;
 hig = { rank: -1,
   iso: 'hig',
   name: 'Higgi',
-  trigrams: 
+  trigrams:
    { 'kə ': 0,
      ' kə': 1,
      'ə m': 2,
@@ -199,7 +199,7 @@ hig = { rank: -1,
      'əmə': 192,
      'ma ': 193,
      'rə ': 194,
-     ', \': 195,
+     ', \\': 195,
      'a-r': 196,
      ghi: 197,
      ' tá': 198,

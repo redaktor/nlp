@@ -3,7 +3,7 @@ declare var sas:I18n.IFingerprint;
 sas = { rank: -1,
   iso: 'sas',
   name: 'Sasak',
-  trigrams: 
+  trigrams:
    { 'aq ': 0,
      ang: 1,
      'ng ': 2,
@@ -154,7 +154,7 @@ sas = { rank: -1,
      lan: 147,
      lag: 148,
      'n d': 149,
-     ', \': 150,
+     ', \\': 150,
      'te ': 151,
      ani: 152,
      ipa: 153,

@@ -3,7 +3,7 @@ declare var sxn:I18n.IFingerprint;
 sxn = { rank: -1,
   iso: 'sxn',
   name: 'Sangir',
-  trigrams: 
+  trigrams:
    { ang: 0,
      'ng ': 1,
      ' ma': 2,
@@ -197,7 +197,7 @@ sxn = { rank: -1,
      'g n': 190,
      'koạ': 191,
      ' in': 192,
-     ', \': 193,
+     ', \\': 193,
      'ẹ̌d': 194,
      'e w': 195,
      'oạ ': 196,

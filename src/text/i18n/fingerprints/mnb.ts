@@ -3,7 +3,7 @@ declare var mnb:I18n.IFingerprint;
 mnb = { rank: -1,
   iso: 'mnb',
   name: 'Muna',
-  trigrams: 
+  trigrams:
    { 'no ': 0,
      ano: 1,
      ' ka': 2,
@@ -160,7 +160,7 @@ mnb = { rank: -1,
      adi: 153,
      'na ': 154,
      aan: 155,
-     ', \': 156,
+     ', \\': 156,
      aku: 157,
      'eo ': 158,
      'u. ': 159,

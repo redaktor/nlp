@@ -3,7 +3,7 @@ declare var mwv:I18n.IFingerprint;
 mwv = { rank: -1,
   iso: 'mwv',
   name: 'Mentawai',
-  trigrams: 
+  trigrams:
    { ' ka': 0,
      ' si': 1,
      'ka ': 2,
@@ -129,7 +129,7 @@ mwv = { rank: -1,
      ipu: 122,
      'si ': 123,
      sik: 124,
-     ', \': 125,
+     ', \\': 125,
      aia: 126,
      sar: 127,
      'ut ': 128,

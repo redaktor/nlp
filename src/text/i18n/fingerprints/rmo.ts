@@ -3,7 +3,7 @@ declare var rmo:I18n.IFingerprint;
 rmo = { rank: -1,
   iso: 'rmo',
   name: 'Romani, Sinti',
-  trigrams: 
+  trigrams:
    { ' o ': 0,
      ' ko': 1,
      'an ': 2,
@@ -212,7 +212,7 @@ rmo = { rank: -1,
      pra: 205,
      kri: 206,
      'o r': 207,
-     ': \': 208,
+     ': \\': 208,
      hun: 209,
      epa: 210,
      'us ': 211,

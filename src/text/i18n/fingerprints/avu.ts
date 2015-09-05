@@ -3,7 +3,7 @@ declare var avu:I18n.IFingerprint;
 avu = { rank: -1,
   iso: 'avu',
   name: 'Avokaya',
-  trigrams: 
+  trigrams:
    { ' rî': 0,
      ' dr': 1,
      'rí ': 2,
@@ -213,7 +213,7 @@ avu = { rank: -1,
      'nõ ': 206,
      '\" ': 207,
      'õnj': 208,
-     ', \': 209,
+     ', \\': 209,
      'ríl': 210,
      'ãnd': 211,
      ' vó': 212,

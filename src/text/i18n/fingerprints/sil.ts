@@ -3,7 +3,7 @@ declare var sil:I18n.IFingerprint;
 sil = { rank: -1,
   iso: 'sil',
   name: 'Sisaala, Tumulung',
-  trigrams: 
+  trigrams:
    { 'la ': 0,
      'aa ': 1,
      ' wi': 2,
@@ -196,7 +196,7 @@ sil = { rank: -1,
      ' ji': 189,
      ', m': 190,
      'lɛ.': 191,
-     ', \': 192,
+     ', \\': 192,
      'ul,': 193,
      'agɛ': 194,
      'ɛ ŋ': 195,

@@ -3,7 +3,7 @@ declare var mzk:I18n.IFingerprint;
 mzk = { rank: -1,
   iso: 'mzk',
   name: 'Mambila, Nigeria',
-  trigrams: 
+  trigrams:
    { 'eh ': 0,
      'éh ': 1,
      ' éh': 2,
@@ -147,7 +147,7 @@ mzk = { rank: -1,
      'n n': 140,
      lle: 141,
      esu: 142,
-     ', \': 143,
+     ', \\': 143,
      jes: 144,
      sus: 145,
      'o n': 146,

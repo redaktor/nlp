@@ -3,7 +3,7 @@ declare var ahk:I18n.IFingerprint;
 ahk = { rank: -1,
   iso: 'ahk',
   name: 'Akha ',
-  trigrams: 
+  trigrams:
    { 'aˬ ': 0,
      '-eu': 1,
      'hˇ ': 2,
@@ -277,7 +277,7 @@ ahk = { rank: -1,
      '.\"': 270,
      '-iˇ': 271,
      'aˆ-': 272,
-     ', \': 273,
+     ', \\': 273,
      'euˆ': 274,
      'leˇ': 275,
      seh: 276,

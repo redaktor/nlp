@@ -3,7 +3,7 @@ declare var arz:I18n.IFingerprint;
 arz = { rank: -1,
   iso: 'arz',
   name: 'Arab, Egyptian',
-  trigrams: 
+  trigrams:
    { ' ٱل': 0,
      ' وَ': 1,
      'ٱلْ': 2,
@@ -85,7 +85,7 @@ arz = { rank: -1,
      'َكَ': 78,
      'َ أ': 79,
      'هُم': 80,
-     '  \': 81,
+     '  \\': 81,
      'ٱلّ': 82,
      'َوْ': 83,
      'ذَا': 84,

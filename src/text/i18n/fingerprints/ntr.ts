@@ -3,7 +3,7 @@ declare var ntr:I18n.IFingerprint;
 ntr = { rank: -1,
   iso: 'ntr',
   name: 'Ntrubo',
-  trigrams: 
+  trigrams:
    { 'na ': 0,
      ' ke': 1,
      'aa ': 2,
@@ -198,7 +198,7 @@ ntr = { rank: -1,
      'i d': 191,
      kol: 192,
      'a l': 193,
-     ', \': 194,
+     ', \\': 194,
      aal: 195,
      yel: 196,
      wos: 197,

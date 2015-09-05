@@ -3,7 +3,7 @@ declare var mej:I18n.IFingerprint;
 mej = { rank: -1,
   iso: 'mej',
   name: 'Meyah',
-  trigrams: 
+  trigrams:
    { 'ga ': 0,
      'a o': 1,
      ngg: 2,
@@ -221,7 +221,7 @@ mej = { rank: -1,
      ' ei': 214,
      mif: 215,
      '\" ': 216,
-     ', \': 217,
+     ', \\': 217,
      ' ja': 218,
      gin: 219,
      esa: 220,

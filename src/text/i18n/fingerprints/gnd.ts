@@ -3,7 +3,7 @@ declare var gnd:I18n.IFingerprint;
 gnd = { rank: -1,
   iso: 'gnd',
   name: 'Zulgo',
-  trigrams: 
+  trigrams:
    { ' a ': 0,
      'a, ': 1,
      'a a': 2,
@@ -179,7 +179,7 @@ gnd = { rank: -1,
      'k a': 172,
      meg: 173,
      'à b': 174,
-     ': \': 175,
+     ': \\': 175,
      'i d': 176,
      ' kə': 177,
      'aɗa': 178,

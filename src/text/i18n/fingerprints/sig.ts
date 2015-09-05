@@ -3,7 +3,7 @@ declare var sig:I18n.IFingerprint;
 sig = { rank: -1,
   iso: 'sig',
   name: 'Paasaal',
-  trigrams: 
+  trigrams:
    { 'aa ': 0,
      'ɩya': 1,
      ' ba': 2,
@@ -184,7 +184,7 @@ sig = { rank: -1,
      eli: 177,
      'ʋ m': 178,
      ' te': 179,
-     ', \': 180,
+     ', \\': 180,
      '\" ': 181,
      'ɩ l': 182,
      'ɩɩn': 183,

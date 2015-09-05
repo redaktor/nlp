@@ -3,7 +3,7 @@ declare var ljp:I18n.IFingerprint;
 ljp = { rank: -1,
   iso: 'ljp',
   name: 'Lampung',
-  trigrams: 
+  trigrams:
    { 'ai ': 0,
      ' sa': 1,
      'ma ': 2,
@@ -161,7 +161,7 @@ ljp = { rank: -1,
      'tu ': 154,
      ban: 155,
      ati: 156,
-     ', \': 157,
+     ', \\': 157,
      juk: 158,
      ada: 159,
      'i p': 160,

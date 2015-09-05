@@ -3,7 +3,7 @@ declare var dwr:I18n.IFingerprint;
 dwr = { rank: -1,
   iso: 'dwr',
   name: 'Dawro',
-  trigrams: 
+  trigrams:
    { 'aa ': 0,
      yaa: 1,
      iya: 2,
@@ -156,7 +156,7 @@ dwr = { rank: -1,
      e7i: 149,
      'n, ': 150,
      ' nu': 151,
-     ', \': 152,
+     ', \\': 152,
      'a u': 153,
      oop: 154,
      '" y': 155,

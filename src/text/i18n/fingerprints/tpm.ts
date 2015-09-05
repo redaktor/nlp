@@ -3,7 +3,7 @@ declare var tpm:I18n.IFingerprint;
 tpm = { rank: -1,
   iso: 'tpm',
   name: 'Tampulma',
-  trigrams: 
+  trigrams:
    { ' ba': 0,
      ' a ': 1,
      'a n': 2,
@@ -148,7 +148,7 @@ tpm = { rank: -1,
      tim: 141,
      ' bi': 142,
      'tiŋ': 143,
-     ', \': 144,
+     ', \\': 144,
      'u k': 145,
      ena: 146,
      ' aw': 147,

@@ -3,7 +3,7 @@ declare var bgr:I18n.IFingerprint;
 bgr = { rank: -1,
   iso: 'bgr',
   name: 'Bawm',
-  trigrams: 
+  trigrams:
    { ' ch': 0,
      chu: 1,
      'an ': 2,
@@ -147,7 +147,7 @@ bgr = { rank: -1,
      'h h': 140,
      ' hâ': 141,
      'i k': 142,
-     ', \': 143,
+     ', \\': 143,
      tir: 144,
      'u n': 145,
      'âwi': 146,

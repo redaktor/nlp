@@ -3,7 +3,7 @@ declare var sua:I18n.IFingerprint;
 sua = { rank: -1,
   iso: 'sua',
   name: 'Kisukuma',
-  trigrams: 
+  trigrams:
    { ' ba': 0,
      ' na': 1,
      ' u ': 2,
@@ -153,7 +153,7 @@ sua = { rank: -1,
      ' ak': 146,
      ' gw': 147,
      'ki,': 148,
-     ', \': 149,
+     ', \\': 149,
      kwe: 150,
      'ku ': 151,
      lya: 152,

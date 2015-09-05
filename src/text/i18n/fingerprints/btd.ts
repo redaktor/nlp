@@ -3,7 +3,7 @@ declare var btd:I18n.IFingerprint;
 btd = { rank: -1,
   iso: 'btd',
   name: 'Batak Dairi',
-  trigrams: 
+  trigrams:
    { ' si': 0,
      'en ': 1,
      'go ': 2,
@@ -163,7 +163,7 @@ btd = { rank: -1,
      ' pè': 156,
      tan: 157,
      sin: 158,
-     ', \': 159,
+     ', \\': 159,
      'h k': 160,
      'i j': 161,
      'atè': 162,

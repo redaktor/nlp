@@ -3,7 +3,7 @@ declare var ptu:I18n.IFingerprint;
 ptu = { rank: -1,
   iso: 'ptu',
   name: 'Bambam',
-  trigrams: 
+  trigrams:
    { 'na ': 0,
      nna: 1,
      ann: 2,
@@ -153,7 +153,7 @@ ptu = { rank: -1,
      '\" ': 146,
      'm i': 147,
      'a: ': 148,
-     ': \': 149,
+     ': \\': 149,
      'o p': 150,
      dee: 151,
      '. a': 152,

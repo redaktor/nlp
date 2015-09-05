@@ -3,7 +3,7 @@ declare var tby:I18n.IFingerprint;
 tby = { rank: -1,
   iso: 'tby',
   name: 'Tabaru',
-  trigrams: 
+  trigrams:
    { ' \'o': 0,
      ' ma': 1,
      'ma ': 2,
@@ -187,7 +187,7 @@ tby = { rank: -1,
      mak: 180,
      ima: 181,
      ato: 182,
-     ', \': 183,
+     ', \\': 183,
      iai: 184,
      's w': 185,
      'si ': 186,

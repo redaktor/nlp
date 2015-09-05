@@ -3,7 +3,7 @@ declare var yli:I18n.IFingerprint;
 yli = { rank: -1,
   iso: 'yli',
   name: 'Yali, Angguruk',
-  trigrams: 
+  trigrams:
    { 'uk ': 0,
      'en ': 1,
      ruk: 2,
@@ -178,7 +178,7 @@ yli = { rank: -1,
      'si ': 171,
      kon: 172,
      ruh: 173,
-     ', \': 174,
+     ', \\': 174,
      'o h': 175,
      ire: 176,
      'n w': 177,

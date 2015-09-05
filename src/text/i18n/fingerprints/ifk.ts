@@ -3,7 +3,7 @@ declare var ifk:I18n.IFingerprint;
 ifk = { rank: -1,
   iso: 'ifk',
   name: 'Tuwali Ifugao',
-  trigrams: 
+  trigrams:
    { 'an ': 0,
      ' na': 1,
      ' di': 2,
@@ -181,7 +181,7 @@ ifk = { rank: -1,
      tuw: 174,
      ' pu': 175,
      'n j': 176,
-     'y \': 177,
+     'y \\': 177,
      'am-': 178,
      ala: 179,
      'i n': 180,

@@ -3,7 +3,7 @@ declare var car:I18n.IFingerprint;
 car = { rank: -1,
   iso: 'car',
   name: 'Carib',
-  trigrams: 
+  trigrams:
    { ' mo': 0,
      'ro ': 1,
      'on ': 2,
@@ -228,7 +228,7 @@ car = { rank: -1,
      ' au': 221,
      top: 222,
      jes: 223,
-     ': \': 224,
+     ': \\': 224,
      sus: 225,
      esu: 226,
      ' an': 227,

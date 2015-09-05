@@ -3,7 +3,7 @@ declare var kzf:I18n.IFingerprint;
 kzf = { rank: -1,
   iso: 'kzf',
   name: 'Kaili, Da\'a',
-  trigrams: 
+  trigrams:
    { ' na': 0,
      'a n': 1,
      'na ': 2,
@@ -211,7 +211,7 @@ kzf = { rank: -1,
      'pu\'': 204,
      bel: 205,
      kam: 206,
-     ', \': 207,
+     ', \\': 207,
      ong: 208,
      kit: 209,
      'i i': 210,

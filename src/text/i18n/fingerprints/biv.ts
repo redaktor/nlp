@@ -3,7 +3,7 @@ declare var biv:I18n.IFingerprint;
 biv = { rank: -1,
   iso: 'biv',
   name: 'Birifor, Southern',
-  trigrams: 
+  trigrams:
    { ' a ': 0,
      ' na': 1,
      ' ba': 2,
@@ -121,7 +121,7 @@ biv = { rank: -1,
      'ɩbɛ': 114,
      ' de': 115,
      ', k': 116,
-     ', \': 117,
+     ', \\': 117,
      esu: 118,
      'ɔ a': 119,
      'hɛ ': 120,

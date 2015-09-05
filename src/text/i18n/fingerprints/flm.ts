@@ -3,7 +3,7 @@ declare var flm:I18n.IFingerprint;
 flm = { rank: -1,
   iso: 'flm',
   name: 'Chin, Falam',
-  trigrams: 
+  trigrams:
    { ' a ': 0,
      'an ': 1,
      'ah ': 2,
@@ -150,7 +150,7 @@ flm = { rank: -1,
      'h l': 143,
      ' aw': 144,
      hal: 145,
-     ', \': 146,
+     ', \\': 146,
      ' ta': 147,
      'i k': 148,
      'u p': 149,

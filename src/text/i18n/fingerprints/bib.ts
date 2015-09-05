@@ -3,7 +3,7 @@ declare var bib:I18n.IFingerprint;
 bib = { rank: -1,
   iso: 'bib',
   name: 'Bissa',
-  trigrams: 
+  trigrams:
    { 'ɔɔ ': 0,
      ' a ': 1,
      ' bɩ': 2,
@@ -148,7 +148,7 @@ bib = { rank: -1,
      ' ʋ.': 141,
      eer: 142,
      mim: 143,
-     ': \': 144,
+     ': \\': 144,
      ezu: 145,
      ' ye': 146,
      nta: 147,

@@ -3,7 +3,7 @@ declare var npy:I18n.IFingerprint;
 npy = { rank: -1,
   iso: 'npy',
   name: 'Napu',
-  trigrams: 
+  trigrams:
    { 'na ': 0,
      ' ha': 1,
      'au ': 2,
@@ -152,7 +152,7 @@ npy = { rank: -1,
      mpu: 145,
      'to ': 146,
      gaa: 147,
-     ': \': 148,
+     ': \\': 148,
      gan: 149,
      moh: 150,
      ran: 151,

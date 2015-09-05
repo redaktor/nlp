@@ -3,7 +3,7 @@ declare var lee:I18n.IFingerprint;
 lee = { rank: -1,
   iso: 'lee',
   name: 'Lyele',
-  trigrams: 
+  trigrams:
    { 'ə̀ ': 0,
      ' bə': 1,
      'ɛ́ ': 2,
@@ -108,7 +108,7 @@ lee = { rank: -1,
      ' né': 101,
      '̀rh': 102,
      '\" ': 103,
-     ': \': 104,
+     ': \\': 104,
      'ɔn ': 105,
      'wɛ̀': 106,
      'i n': 107,

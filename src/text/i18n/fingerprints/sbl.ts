@@ -3,7 +3,7 @@ declare var sbl:I18n.IFingerprint;
 sbl = { rank: -1,
   iso: 'sbl',
   name: 'Sambal, Botolan',
-  trigrams: 
+  trigrams:
    { ' ha': 0,
      'ay ': 1,
      'in ': 2,
@@ -176,7 +176,7 @@ sbl = { rank: -1,
      'è ': 169,
      ' bi': 170,
      pir: 171,
-     ', \': 172,
+     ', \\': 172,
      nal: 173,
      'wà': 174,
      ' no': 175,

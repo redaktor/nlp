@@ -3,7 +3,7 @@ declare var az:I18n.IFingerprint;
 az = { rank: 52,
   iso: 'aze',
   name: 'Azerbaijani, Simali',
-  trigrams: 
+  trigrams:
    { lar: 0,
      'lәr': 1,
      ' on': 2,
@@ -87,7 +87,7 @@ az = { rank: 52,
      'ra ': 80,
      ' gә': 81,
      'iz ': 82,
-     ': \': 83,
+     ': \\': 83,
      onu: 84,
      ' sa': 85,
      'a g': 86,

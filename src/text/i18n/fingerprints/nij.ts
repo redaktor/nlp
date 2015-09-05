@@ -3,7 +3,7 @@ declare var nij:I18n.IFingerprint;
 nij = { rank: -1,
   iso: 'nij',
   name: 'Ngaju',
-  trigrams: 
+  trigrams:
    { ' ma': 0,
      'an ': 1,
      ' ka': 2,
@@ -185,7 +185,7 @@ nij = { rank: -1,
      'n j': 178,
      'h a': 179,
      'u m': 180,
-     ', \': 181,
+     ', \\': 181,
      ' ik': 182,
      'pi ': 183,
      ate: 184,

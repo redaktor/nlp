@@ -1,9 +1,9 @@
 import I18n = require('../interfaces.d');
 declare var he:I18n.IFingerprint;
 he = { rank: 121,
-  iso: 'heb',
+  iso: 'he',
   name: 'Hebrew',
-  trigrams: 
+  trigrams:
    { 'ות ': 0,
      'כל ': 1,
      ' כל': 2,

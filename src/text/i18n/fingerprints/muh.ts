@@ -3,7 +3,7 @@ declare var muh:I18n.IFingerprint;
 muh = { rank: -1,
   iso: 'muh',
   name: 'Mundu',
-  trigrams: 
+  trigrams:
    { ' ng': 0,
      'gü ': 1,
      ' te': 2,
@@ -176,7 +176,7 @@ muh = { rank: -1,
      ', m': 169,
      iri: 170,
      '\" ': 171,
-     ', \': 172,
+     ', \\': 172,
      'ti ': 173,
      'e l': 174,
      'a g': 175,

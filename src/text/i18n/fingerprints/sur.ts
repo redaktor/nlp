@@ -3,7 +3,7 @@ declare var sur:I18n.IFingerprint;
 sur = { rank: -1,
   iso: 'sur',
   name: 'Mwaghavul',
-  trigrams: 
+  trigrams:
    { ' mo': 0,
      ' ɗi': 1,
      ' wu': 2,
@@ -198,7 +198,7 @@ sur = { rank: -1,
      jir: 191,
      nwu: 192,
      ret: 193,
-     ', \': 194,
+     ', \\': 194,
      '̶ni': 195,
      'o a': 196,
      'n w': 197,

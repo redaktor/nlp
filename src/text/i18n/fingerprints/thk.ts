@@ -3,7 +3,7 @@ declare var thk:I18n.IFingerprint;
 thk = { rank: -1,
   iso: 'thk',
   name: 'Tharaka',
-  trigrams: 
+  trigrams:
    { 'na ': 0,
      ' ba': 1,
      'ra ': 2,
@@ -117,7 +117,7 @@ thk = { rank: -1,
      nda: 110,
      eer: 111,
      ata: 112,
-     ', \': 113,
+     ', \\': 113,
      ' gî': 114,
      ' ûr': 115,
      ', n': 116,

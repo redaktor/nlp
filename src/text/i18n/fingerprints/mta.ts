@@ -3,7 +3,7 @@ declare var mta:I18n.IFingerprint;
 mta = { rank: -1,
   iso: 'mta',
   name: 'Manobo, Cotabato',
-  trigrams: 
+  trigrams:
    { ' sa': 0,
      'sa ': 1,
      ' di': 2,
@@ -191,7 +191,7 @@ mta = { rank: -1,
      '\" ': 184,
      'us ': 185,
      ' na': 186,
-     ', \': 187,
+     ', \\': 187,
      'i m': 188,
      ', o': 189,
      ' ti': 190,

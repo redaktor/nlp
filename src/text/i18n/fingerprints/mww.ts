@@ -3,7 +3,7 @@ declare var mww:I18n.IFingerprint;
 mww = { rank: -1,
   iso: 'mww',
   name: 'Hmong Daw',
-  trigrams: 
+  trigrams:
    { 's t': 0,
      'us ': 1,
      'is ': 2,
@@ -191,7 +191,7 @@ mww = { rank: -1,
      nro: 184,
      'oo ': 185,
      '\" ': 186,
-     ', \': 187,
+     ', \\': 187,
      haw: 188,
      yob: 189,
      'b c': 190,

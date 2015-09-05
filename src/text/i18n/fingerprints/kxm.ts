@@ -3,7 +3,7 @@ declare var kxm:I18n.IFingerprint;
 kxm = { rank: -1,
   iso: 'kxm',
   name: 'Khmer, Northern',
-  trigrams: 
+  trigrams:
    { '   ': 0,
      '   ': 1,
      '็อฺ': 2,
@@ -159,7 +159,7 @@ kxm = { rank: -1,
      'ง อ': 152,
      'ปร็': 153,
      ' กร': 154,
-     '  \': 155,
+     '  \\': 155,
      ' คล': 156,
      'พอฺ': 157,
      '็ น': 158,

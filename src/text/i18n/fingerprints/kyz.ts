@@ -3,7 +3,7 @@ declare var kyz:I18n.IFingerprint;
 kyz = { rank: -1,
   iso: 'kyz',
   name: 'Kayabi',
-  trigrams: 
+  trigrams:
    { ' \'g': 0,
      'ga ': 1,
      '\'ga': 2,
@@ -247,7 +247,7 @@ kyz = { rank: -1,
      pyr: 240,
      apy: 241,
      ' ki': 242,
-     '. \': 243,
+     '. \\': 243,
      jee: 244,
      'nũ.': 245,
      kou: 246,

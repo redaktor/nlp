@@ -3,7 +3,7 @@ declare var mpx:I18n.IFingerprint;
 mpx = { rank: -1,
   iso: 'mpx',
   name: 'Misima-Panaeyati',
-  trigrams: 
+  trigrams:
    { 'na ': 0,
      ana: 1,
      ' i ': 2,
@@ -183,7 +183,7 @@ mpx = { rank: -1,
      ate: 176,
      ais: 177,
      'su ': 178,
-     ', \': 179,
+     ', \\': 179,
      'u g': 180,
      'l, ': 181,
      'e h': 182,

@@ -3,7 +3,7 @@ declare var nfr:I18n.IFingerprint;
 nfr = { rank: -1,
   iso: 'nfr',
   name: 'Nafaanra',
-  trigrams: 
+  trigrams:
    { 'na ': 0,
      ' na': 1,
      're ': 2,
@@ -146,7 +146,7 @@ nfr = { rank: -1,
      wra: 139,
      yes: 140,
      esu: 141,
-     ', \': 142,
+     ', \\': 142,
      'sɛ ': 143,
      'mi ': 144,
      'u w': 145,

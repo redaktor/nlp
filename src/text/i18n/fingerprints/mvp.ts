@@ -3,7 +3,7 @@ declare var mvp:I18n.IFingerprint;
 mvp = { rank: -1,
   iso: 'mvp',
   name: 'Duri',
-  trigrams: 
+  trigrams:
    { ang: 0,
      ' to': 1,
      ' na': 2,
@@ -139,7 +139,7 @@ mvp = { rank: -1,
      ' ji': 132,
      'a j': 133,
      mas: 134,
-     ', \': 135,
+     ', \\': 135,
      '\" ': 136,
      ada: 137,
      'ni ': 138,

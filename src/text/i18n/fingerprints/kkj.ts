@@ -3,7 +3,7 @@ declare var kkj:I18n.IFingerprint;
 kkj = { rank: -1,
   iso: 'kkj',
   name: 'Kako',
-  trigrams: 
+  trigrams:
    { ' ká': 0,
      'ná ': 1,
      'á n': 2,
@@ -219,7 +219,7 @@ kkj = { rank: -1,
      'mbó': 212,
      'iëy': 213,
      'ó ä': 214,
-     ': \': 215,
+     ': \\': 215,
      '. k': 216,
      'à. ': 217,
      'äá ': 218,

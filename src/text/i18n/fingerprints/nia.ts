@@ -3,7 +3,7 @@ declare var nia:I18n.IFingerprint;
 nia = { rank: -1,
   iso: 'nia',
   name: 'Nias',
-  trigrams: 
+  trigrams:
    { ' ba': 0,
      'ba ': 1,
      ndr: 2,
@@ -149,7 +149,7 @@ nia = { rank: -1,
      'ö l': 142,
      'i. ': 143,
      ifa: 144,
-     ', \': 145,
+     ', \\': 145,
      'i a': 146,
      'a\'e': 147,
      '\'e ': 148,
