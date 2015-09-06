@@ -1,3 +1,5 @@
+## POS word tags, alphabetical
+
 | Tag  | Description                               | Example                    |
 |------|-------------------------------------------|----------------------------|
 | CC   | conjunction, coordinating                 | and, or, but               |
