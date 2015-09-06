@@ -10,6 +10,7 @@ Natural-Language-Processing<br>
 
 TODO: Replace with a description of this package
 See [this fork](https://github.com/redaktor/nlp_compromise) to get an idea ...
+and [the status wiki page](https://github.com/redaktor/nlp/wiki/development-status)
 
 ## Features
 
