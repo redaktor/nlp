@@ -1,47 +1,59 @@
-/** @namespace */
-declare var nlp;
 /**
- * redaktor/nlp by @redaktor foundation and the contributors in 2015<br>
- * derives from<br>
- * // nlp_comprimise by @spencermountain in 2014<br>
- * // (https://github.com/spencermountain/nlp_compromise)<br>
- *
- * a Natural-Language-Processing library in Javascript,
- * small-enough for the browser, and quick-enough to run on keypress - <br>
- * it does tons of clever things: <br><br>
- *
- * <code>var nlp = new NLP(text, options);<br>nlp.myMethod ...</code>
- * <br>
- * @module text/nlp/index
- * @param {text} text
- * @param {object} options
- * @returns {Promise}
- * @summary a Natural-Language-Processing library in JS
+ * a text object is a series of sentences, along with <br>
+ * the generic methods for transforming them
+ * @module text/nlp/text/index
  */
- // TODO "use strict" only ES6 ! https://github.com/Microsoft/TypeScript/issues/3576
- // i18n warnings, see https://github.com/mnater/Hyphenator/blob/master/Hyphenator.js
+import _ = require('../_');
+import Nlp = require('../interfaces.d');
+import load = require('../i18n/load');
+import sentenceParser = require('./sentenceParser');
+import ngram = require('../ngram'); // TODO move to Text ../
+// let's not block anything - we return promises :
+import Promise = require('../../dojo/Promise');
 
-// interfaces:
-import Nlp = require('./interfaces.d');
-import def = require('./_options');
-import _ = require('./_');
-import lang = require('../../dojo/lang');
-import Text = require('./text/index');
-
-class NLP {
-  options:Nlp.IOptions = def;
-  constructor(o:Nlp.IOptions) {
-    this.options = lang.mixin(this.options, o);
+class Text implements Nlp.IText {
+  options:Nlp.IOptions;
+  str:string;
+  sentences:Nlp.ISentence[];
+  constructor(options:Nlp.IOptions) {
+    this.options = options;
     return this;
   }
-  set(v:string|Object) {
-  	if (typeof v === 'string') {
-  		return new Text(this.options).set(v);
-  	} else {
-      this.options = lang.mixin(this.options, v);
-      return this.options;
-  	}
-  	return v;
+  set<T>(str:string) : Promise<any> {
+    function parseSentences(resolve:(sentences) => Nlp.IText) {
+      load(this.options.language, ['index'], function(i18nData) : Nlp.IText {
+
+        function finish(mySentences:string[]) {
+          this.sentences = mySentences;
+          return resolve(this);
+        }
+        sentenceParser(str, this.options).then(finish.bind(this));
+        return this;
+      }.bind(this));
+    }
+  	return new Promise(parseSentences.bind(this));
+  }
+  //Text methods
+  ngram():Object {
+    let terms = this.terms();
+    terms = terms.map(function(t) {
+      return t.normal;
+    });
+    return ngram(terms);
+  }
+  text():string { return this.str; }
+  //map over sentence methods
+  terms():any[] {
+    const arr = this.sentences.map(function(s) {
+      return s.terms;
+    });
+    return _.values(arr);
+  }
+  normalised():string {
+    const arr = this.sentences.map(function(s) {
+      return s.normalized();
+    });
+    return _.values(arr).join(' ');
   }
 }
-export = NLP;
+export = Text;
