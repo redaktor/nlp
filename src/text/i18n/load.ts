@@ -6,14 +6,22 @@ import m = require('./nls/en/index');
 
 // see also https://github.com/dojo/loader/issues/29 :
 // TODO - might change to dojo loader plugin ...
-function loadData(lang:string, keys:string[], callback?:any) {
+function loadData(lang:string|boolean, keys:string[], callback?:any) {
   var hasCallback = (callback && typeof callback === 'function');
-  const toModuleKeys = function(key:string) : string{
+  function toModuleKeys(key:string) : string{
+    if (!lang) { return ['./fingerprints/',key].join(''); }
     return ['./nls/',lang,'/',key].join('');
+  }
+  function cb(args){
+    if (callback) {
+      if (!lang) { return callback(args); }
+      return callback.apply(callback, args);
+    }
+    return args;
   }
   // TODO - make it optional:
   // options like {commonjsMinify:false, amdMinify:true} :
-  const toMinModuleKeys = function(key:string) : string{
+  const toMinModuleKeys = function(key:string) : string {
     return ['./nls/',lang,'/',key,'.min'].join('');
   }
   const keysMin = keys.map(toMinModuleKeys);
@@ -22,19 +30,21 @@ function loadData(lang:string, keys:string[], callback?:any) {
   if (has('host-node')) {
     const modules:any[] = [];
     keys.forEach(function(key) {
-      var data: typeof m = require(key);
-      modules.push(data);
+      try {
+        var data: typeof m = require(key);
+        modules.push(data);
+      } catch (err) {
+        throw err;
+      }
     });
-    if (modules.length === keys.length && hasCallback) {
-      callback.apply(callback, modules);
-    } else if (modules.length === keys.length && !hasCallback) {
-      return modules;
+    if (modules.length === keys.length) {
+      return cb(modules);
     } else {
       throw new Error('Could not load module: '+keys.join(', '));
     }
   } else if (typeof define === 'function' && define.amd) {
-    require(keysMin, function () {
-        if (hasCallback) { callback.apply(callback, arguments); }
+    require((!lang) ? keys : keysMin, function () {
+        return cb(arguments);
       },
       (err: Error) => {
         throw err;
