@@ -8,22 +8,207 @@ Natural-Language-Processing<br>
 
 # redaktor-text-nlp [wip]
 
-TODO: Replace with a description of this package <br>
-See [this fork](https://github.com/redaktor/nlp_compromise)
-and [the status wiki page](https://github.com/redaktor/nlp/wiki/development-status)
-to get an idea  ...
+#No training, no prolog. i18n TypeScript
+a Natural Language Processing and Text Manipulation library *for Javascript*,<br> small-enough for the browser, and quick-enough to run on keypress and awsome on NodeJS :two_men_holding_hands:
+
+and a toolkit to develop Natural Language Processing and Text Manipulation in all the languages<br>
+NOTE: This is a Work In Progress which we started a while ago for a CMS based on ActivityPub –
+not all API methods are implemented here and neither are the dictionaries (coming soon)
+
 
 ## Features
 
-TODO: Add sections on features of this package
+```javascript
+var nlp = new NLP();
+nlp.set('some text');
+nlp.pluralize().text(); 
+// --> "some texts"
+nlp.pos('she sells seashells by the seashore').to_past().text()
+//she sold seashells by the seashore
+/// [or chain them ...]
+```
 
 ## How do I use this package?
 
-TODO: Add appropriate usage and instruction guidelines
-### To run:
+
+## API
+
+###Sentence methods
+```javascript
+  var s= nlp.pos("Tony Danza is dancing").sentences[0]
+
+  s.tense()
+  //present
+
+  s.text()
+  //"Tony Danza is dancing"
+
+  s.to_past().text()
+  //Tony Danza was dancing
+
+  s.to_present().text()
+  //Tony Danza is dancing
+
+  s.to_future().text()
+  //Tony Danza will be dancing
+
+  s.negate().text()
+  //Tony Danza is not dancing
+
+  s.tags()
+  //[ 'NNP', 'CP', 'VB' ]
+
+  s.entities()
+  //[{text:"Tony Danza"...}]
+
+  s.people()
+  //[{text:"Tony Danza"...}]
+
+  s.nouns()
+  //[{text:"Tony Danza"...}]
+
+  s.adjectives()
+  //[]
+
+  s.adverbs()
+  //[]
+
+  s.verbs()
+  //[{text:"dancing"}]
+
+  s.values()
+  //[]
+````
+
+###Noun methods:
+```javascript
+nlp.noun("earthquakes").singularize()
+//earthquake
+
+nlp.noun("earthquake").pluralize()
+//earthquakes
+
+nlp.noun('veggie burger').is_plural
+//false
+
+nlp.noun('tony danza').is_person
+//true
+nlp.noun('Tony J. Danza elementary school').is_person
+//false
+nlp.noun('SS Tony danza').is_person
+//false
+
+nlp.noun('hour').article()
+//an
+
+nlp.inflect('mayors of toronto'))
+//{ plural: 'mayors of toronto', singular: 'mayor of toronto' }
 ```
-npm install
-grunt
+
+###Verb methods:
+```javascript
+nlp.verb("walked").conjugate()
+//{ infinitive: 'walk',
+//  present: 'walks',
+//  past: 'walked',
+//  gerund: 'walking'}
+nlp.verb('swimming').to_past()
+//swam
+nlp.verb('swimming').to_present()
+//swims
+nlp.verb('swimming').to_future()
+//will swim
+```
+###Adjective methods:
+```javascript
+nlp.adjective("quick").conjugate()
+//  { comparative: 'quicker',
+//    superlative: 'quickest',
+//    adverb: 'quickly',
+//    noun: 'quickness'}
+```
+###Adverb methods
+```javascript
+nlp.adverb("quickly").conjugate()
+//  { adjective: 'quick'}
+```
+
+
+
+## Part-of-speech tagging
+86% on the [Penn treebank](http://www.cis.upenn.edu/~treebank/)
+```javascript
+nlp.pos("Tony Hawk walked quickly to the store.").tags()
+// [ [ 'NNP', 'VBD', 'RB', 'IN', 'DT', 'NN' ] ]
+
+nlp.pos("they would swim").tags()
+// [ [ 'PRP', 'MD', 'VBP' ] ]
+nlp.pos("the obviously good swim").tags()
+// [ [ 'DT', 'RB', 'JJ', 'NN' ] ]
+```
+
+## Named-Entity recognition
+```javascript
+nlp.spot("joe carter loves toronto")
+// [{text:"joe carter"...}, {text:"toronto"...}]
+```
+
+## Sentence segmentation
+```javascript
+nlp.sentences("Hi Dr. Miller the price is 4.59 for the U.C.L.A. Ph.Ds.").length
+//1
+
+nlp.tokenize("she sells sea-shells").length
+//3
+```
+
+## Syllable hyphenization
+70% on the [moby hyphenization corpus](http://www.gutenberg.org/dirs/etext02/mhyph10.zip)  0.5k
+```javascript
+nlp.syllables("hamburger")
+//[ 'ham', 'bur', 'ger' ]
+```
+
+## US-UK Localization
+```javascript
+nlp.americanize("favourite")
+//favorite
+nlp.britishize("synthesized")
+//synthesised
+```
+## N-gram
+```javascript
+str= "She sells seashells by the seashore. The shells she sells are surely seashells."
+nlp.ngram(str, {min_count:1, max_size:5})
+// [{ word: 'she sells', count: 2, size: 2 },
+// ...
+options.min_count // throws away seldom-repeated grams. defaults to 1
+options.max_size  // prevents the result from becoming gigantic. defaults to 5
+```
+### Date parsing
+```javascript
+nlp.value("I married April for the 2nd time on June 5th 1998 ").date()
+// { text: 'June 5th 1998',
+//   from: { year: '1998', month: '06', day: '05' },
+//   to: {} }
+```
+### Number parsing
+```javascript
+nlp.value("two thousand five hundred and sixty").number()
+//2560
+nlp.value("ten and a half million").number()
+//15000000
+```
+### Unicode Normalisation
+a hugely-ignorant, and widely subjective transliteration of latin, cryllic, greek unicode characters to english ascii.
+```javascript
+nlp.normalize("Björk")
+//Bjork
+```
+and for fun,
+```javascript
+nlp.denormalize("The quick brown fox jumps over the lazy dog", {percentage:50})
+// The ɋӈїck brown fox juӎÞs over tӊe laζy dog
 ```
 
 ## How do I contribute?
